@@ -1,0 +1,98 @@
+<protocol VERSION="4">
+<blocks>
+<block CommandLineID="psf" ID="2101159248" blockType="plugins.adufour.blocks.tools.input.File" className="plugins.adufour.blocks.tools.input.File" collapsed="false" definedName="psf" height="61" keepsResults="true" width="136" xLocation="186" yLocation="400">
+<variables>
+<input>
+<variable ID="file" name="file" runtime="false" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block CommandLineID="input" ID="750655497" blockType="plugins.adufour.blocks.tools.input.File" className="plugins.adufour.blocks.tools.input.File" collapsed="true" definedName="input" height="61" keepsResults="true" width="136" xLocation="182" yLocation="273">
+<variables>
+<input>
+<variable ID="file" name="file" runtime="false" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block CommandLineID="output" ID="1440306558" blockType="plugins.adufour.blocks.tools.input.File" className="plugins.adufour.blocks.tools.input.File" collapsed="true" definedName="output" height="61" keepsResults="true" width="145" xLocation="183" yLocation="337">
+<variables>
+<input>
+<variable ID="file" name="file" runtime="false" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="1103799784" blockType="plugins.adufour.blocks.tools.io.FileToSequence" className="plugins.adufour.blocks.tools.io.FileToSequence" collapsed="true" definedName="File to sequence" height="107" keepsResults="true" width="204" xLocation="355" yLocation="273">
+<variables>
+<input>
+<variable ID="input file" name="input file" runtime="false" visible="true"/>
+<variable ID="Series" name="Series" runtime="false" value="0" visible="true"/>
+</input>
+<output>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1141046015" blockType="plugins.mitiv.blinddeconv.MitivBlindDeconvolution" className="plugins.mitiv.deconv.MitivDeconvolution" collapsed="true" definedName="Mitiv blind deconvolution" height="623" keepsResults="true" width="361" xLocation="603" yLocation="273">
+<variables>
+<input>
+<variable ID="image" name="Sequence:" runtime="false" visible="true"/>
+<variable ID="channel" name="Canal:" runtime="false" value="0" visible="true"/>
+<variable ID="dxy" name="dxy(nm):" runtime="false" value="64.5" visible="true"/>
+<variable ID="dz" name="dz(nm):" runtime="false" value="128.0" visible="true"/>
+<variable ID="NA" name="NA:" runtime="false" value="1.4" visible="true"/>
+<variable ID="ni" name="ni:" runtime="false" value="1.518" visible="true"/>
+<variable ID="lambda" name="λ(nm):" runtime="false" value="542.0" visible="true"/>
+<variable ID="deadPixel" name="Bad data map:" runtime="false" value="Active Sequence" visible="true"/>
+<variable ID="gain" name="Gain:" runtime="false" value="1.0" visible="true"/>
+<variable ID="noise" name="Readout Noise:" runtime="false" value="10.0" visible="true"/>
+<variable ID="mu" name="Regularization level:" runtime="false" value="1.0E-5" visible="true"/>
+<variable ID="espilon" name="Threshold level:" runtime="false" value="0.01" visible="true"/>
+<variable ID="Postivity" name="Enforce nonnegativity:" runtime="false" value="true" visible="true"/>
+<variable ID="nbIteration" name="Number of iterations: " runtime="false" value="10" visible="true"/>
+<variable ID="restart" name="Starting point:" runtime="false" value="Active Sequence" visible="true"/>
+<variable ID="radial" name="Radially symmetric PSF" runtime="false" value="false" visible="true"/>
+<variable ID="nbAlphaCoef" name="Number of phase coefs Nα:" runtime="false" value="7" visible="true"/>
+<variable ID="nbBetaCoef" name="Number of modulus coefs Nβ:" runtime="false" value="0" visible="true"/>
+<variable ID="defocusMaxIter" name="Max. nb. of iterations for defocus:" runtime="false" value="20" visible="true"/>
+<variable ID="phaseMaxIter" name="Max. nb. of iterations for phase:" runtime="false" value="20" visible="true"/>
+<variable ID="modulusMaxIter" name="Max. nb. of iterations for modulus:" runtime="false" value="0" visible="true"/>
+<variable ID="bDecTotalIteration" name="Number of loops:" runtime="false" value="2" visible="true"/>
+</input>
+<output>
+<variable ID="outputSize" name="Output size:" runtime="false" visible="true"/>
+<variable ID="outputImage" name="Output Image" runtime="false" visible="true"/>
+<variable ID="outputPSF" name="Output PSF" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1384540614" blockType="plugins.adufour.blocks.tools.io.SequenceToFile" className="plugins.adufour.blocks.tools.io.SequenceToFile" collapsed="true" definedName="Sequence to file" height="83" keepsResults="true" width="234" xLocation="605" yLocation="337">
+<variables>
+<input>
+<variable ID="folder" name="File or folder" runtime="false" visible="true"/>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="2040197229" blockType="plugins.adufour.blocks.tools.io.SequenceToFile" className="plugins.adufour.blocks.tools.io.SequenceToFile" collapsed="true" definedName="Sequence to file" height="83" keepsResults="true" width="234" xLocation="605" yLocation="425">
+<variables>
+<input>
+<variable ID="folder" name="File or folder" runtime="false" visible="true"/>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+</blocks>
+<links>
+<link dstBlockID="1103799784" dstVarID="input file" srcBlockID="750655497" srcVarID="file"/>
+<link dstBlockID="1384540614" dstVarID="folder" srcBlockID="1440306558" srcVarID="file"/>
+<link dstBlockID="1141046015" dstVarID="image" srcBlockID="1103799784" srcVarID="sequence"/>
+<link dstBlockID="1384540614" dstVarID="sequence" srcBlockID="1141046015" srcVarID="outputImage"/>
+<link dstBlockID="2040197229" dstVarID="folder" srcBlockID="2101159248" srcVarID="file"/>
+<link dstBlockID="2040197229" dstVarID="sequence" srcBlockID="1141046015" srcVarID="outputPSF"/>
+</links>
+</protocol>

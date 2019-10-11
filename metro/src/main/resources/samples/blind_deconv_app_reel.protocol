@@ -1,0 +1,365 @@
+<protocol VERSION="4">
+<blocks>
+<block CommandLineID="host" ID="1517803501" blockType="plugins.adufour.blocks.tools.input.Text" className="plugins.adufour.blocks.tools.input.Text" collapsed="true" definedName="host" height="63" keepsResults="true" width="165" xLocation="93" yLocation="38">
+<variables>
+<input>
+<variable ID="text" name="text" runtime="false" value="" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block CommandLineID="AuthCode" ID="1664936069" blockType="plugins.adufour.blocks.tools.input.Text" className="plugins.adufour.blocks.tools.input.Text" collapsed="true" definedName="AuthCode" height="63" keepsResults="true" width="165" xLocation="63" yLocation="96">
+<variables>
+<input>
+<variable ID="text" name="text" runtime="false" value="" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block CommandLineID="RecordIds" ID="224892493" blockType="plugins.adufour.blocks.tools.input.Integer" className="plugins.adufour.blocks.tools.input.Integer" collapsed="true" definedName="RecordIds" height="63" keepsResults="true" width="164" xLocation="66" yLocation="161">
+<variables>
+<input>
+<variable ID="integer" name="integer" runtime="false" value="0" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block CommandLineID="PSFRef" ID="559094124" blockType="plugins.adufour.blocks.tools.input.Integer" className="plugins.adufour.blocks.tools.input.Integer" collapsed="true" definedName="PSFRef" height="63" keepsResults="true" width="160" xLocation="83" yLocation="238">
+<variables>
+<input>
+<variable ID="integer" name="integer" runtime="false" value="0" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="1584041873" blockType="plugins.ofuica.metro.protocols.MetroLogin" className="plugins.ofuica.metro.protocols.MetroLogin" collapsed="true" definedName="Metro login" height="155" keepsResults="true" width="219" xLocation="268" yLocation="61">
+<variables>
+<input>
+<variable ID="service" name="service" runtime="false" value="OpenImadis" visible="true"/>
+<variable ID="url" name="url" runtime="false" visible="true"/>
+<variable ID="access key" name="access key" runtime="false" visible="true"/>
+<variable ID="session name" name="session name" runtime="false" value="My Session" visible="true"/>
+</input>
+<output>
+<variable ID="session" name="session" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="2008611696" blockType="plugins.ofuica.metro.protocols.MetroGetSequence" className="plugins.ofuica.metro.protocols.MetroGetSequence" collapsed="true" definedName="Get Objective Image " height="107" keepsResults="true" width="232" xLocation="248" yLocation="161">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="My Session" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+</input>
+<output>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1117117649" blockType="plugins.ferreol.demics.EpiDEMIC" className="plugins.ferreol.demics.EpiDEMIC" collapsed="true" definedName="Blind deconvolution" height="919" keepsResults="true" width="404" xLocation="492" yLocation="161">
+<variables>
+<input>
+<variable ID="image" name="Sequence:" runtime="false" visible="true"/>
+<variable ID="image channel" name="Channel:" runtime="false" value="0" visible="true"/>
+<variable ID="starting point" name="Starting point:" runtime="false" value="Active Sequence" visible="true"/>
+<variable ID="starting point channel" name="Initialization channel :" runtime="false" value="0" visible="true"/>
+<variable ID="weights Method" name="Weighting:" runtime="false" value="Computed variance" visible="true"/>
+<variable ID="deadPixel" name="Bad data map:" runtime="false" value="Active Sequence" visible="true"/>
+<variable ID="gain" name="Gain:" runtime="false" value="1.0" visible="true"/>
+<variable ID="noise" name="Readout Noise:" runtime="false" value="10.0" visible="true"/>
+<variable ID="mu" name="Regularization level:" runtime="false" value="1.0E-5" visible="true"/>
+<variable ID="scale" name="Aspect ratio of a voxel" runtime="false" value="1.0 1.0 1.0" visible="true"/>
+<variable ID="Postivity" name="Enforce nonnegativity:" runtime="false" value="true" visible="true"/>
+<variable ID="nbIteration" name="Number of iterations: " runtime="false" value="10" visible="true"/>
+<variable ID="Postivity" name="Enforce nonnegativity:" runtime="false" value="true" visible="true"/>
+<variable ID="single precision" name="Compute in single precision:" runtime="false" value="false" visible="true"/>
+<variable ID="saveFile" name="Save parameters in" runtime="false" value="" visible="true"/>
+<variable ID="dxy" name="dxy(nm):" runtime="false" value="64.5" visible="true"/>
+<variable ID="dz" name="dz(nm):" runtime="false" value="128.0" visible="true"/>
+<variable ID="NA" name="NA:" runtime="false" value="1.4" visible="true"/>
+<variable ID="ni" name="ni:" runtime="false" value="1.518" visible="true"/>
+<variable ID="lambda" name="λ(nm):" runtime="false" value="540.0" visible="true"/>
+<variable ID="espilon" name="Threshold level:" runtime="false" value="0.01" visible="true"/>
+<variable ID="padding xy" name="padding xy:" runtime="false" value="30" visible="true"/>
+<variable ID="padding z" name="padding z :" runtime="false" value="30" visible="true"/>
+<variable ID="radial" name="Radially symmetric PSF" runtime="false" value="false" visible="true"/>
+<variable ID="nbAlphaCoef" name="Number of phase coefs Nα:" runtime="false" value="7" visible="true"/>
+<variable ID="nbBetaCoef" name="Number of modulus coefs Nβ:" runtime="false" value="0" visible="true"/>
+<variable ID="defocusMaxIter" name="Max. nb. of iterations for defocus:" runtime="false" value="20" visible="true"/>
+<variable ID="phaseMaxIter" name="Max. nb. of iterations for phase:" runtime="false" value="20" visible="true"/>
+<variable ID="modulusMaxIter" name="Max. nb. of iterations for modulus:" runtime="false" value="0" visible="true"/>
+<variable ID="bDecTotalIteration" name="Number of loops:" runtime="false" value="64" visible="true"/>
+<variable ID="loadFile" name="Load parameters from" runtime="false" value="" visible="true"/>
+</input>
+<output>
+<variable ID="outputSize" name="Output size:" runtime="false" visible="true"/>
+<variable ID="output" name="Output Image" runtime="false" visible="true"/>
+<variable ID="weightmap" name="Computed weight" runtime="false" visible="true"/>
+<variable ID="outputPSF" name="Output PSF" runtime="false" visible="true"/>
+<variable ID="pupilShift" name="pupilShift" runtime="false" visible="true"/>
+<variable ID="phaseCoefs" name="phase coefs" runtime="false" visible="true"/>
+<variable ID="modulusCoefs" name="modulusCoefs" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1136233867" blockType="plugins.ofuica.metro.protocols.MetroGetSequence" className="plugins.ofuica.metro.protocols.MetroGetSequence" collapsed="true" definedName="Get Measured PSF" height="107" keepsResults="true" width="188" xLocation="245" yLocation="238">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="My Session" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+</input>
+<output>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1886934951" blockType="plugins.ofuica.metro.protocols.PSFProfiler" className="plugins.ofuica.metro.protocols.PSFProfiler" collapsed="true" definedName="PSF profiler" height="237" keepsResults="true" width="216" xLocation="737" yLocation="160">
+<variables>
+<input>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+</input>
+<output>
+<variable ID="resolutions" name="resolutions" runtime="false" visible="true"/>
+<variable ID="units" name="units" runtime="false" visible="true"/>
+<variable ID="XParams" name="XParams" runtime="false" visible="true"/>
+<variable ID="YParams" name="YParams" runtime="false" visible="true"/>
+<variable ID="ZParams" name="ZParams" runtime="false" visible="true"/>
+<variable ID="xProfile" name="xProfile" runtime="false" visible="true"/>
+<variable ID="yProfile" name="yProfile" runtime="false" visible="true"/>
+<variable ID="zProfile" name="zProfile" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="172816951" blockType="plugins.ofuica.metro.protocols.PSFProfiler" className="plugins.ofuica.metro.protocols.PSFProfiler" collapsed="true" definedName="PSF profiler" height="237" keepsResults="true" width="219" xLocation="499" yLocation="304">
+<variables>
+<input>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+</input>
+<output>
+<variable ID="resolutions" name="resolutions" runtime="false" visible="true"/>
+<variable ID="units" name="units" runtime="false" visible="true"/>
+<variable ID="XParams" name="XParams" runtime="false" visible="true"/>
+<variable ID="YParams" name="YParams" runtime="false" visible="true"/>
+<variable ID="ZParams" name="ZParams" runtime="false" visible="true"/>
+<variable ID="xProfile" name="xProfile" runtime="false" visible="true"/>
+<variable ID="yProfile" name="yProfile" runtime="false" visible="true"/>
+<variable ID="zProfile" name="zProfile" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="96061605" blockType="plugins.ofuica.metro.protocols.MetroUpload" className="plugins.ofuica.metro.protocols.MetroUpload" collapsed="true" definedName="Deconvoluted image upload" height="153" keepsResults="true" width="286" xLocation="732" yLocation="74">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="My Session" visible="true"/>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+<variable ID="id ref project/dataset" name="id ref project/dataset" runtime="false" value="false" visible="true"/>
+<variable ID="id reference" name="id reference" runtime="false" visible="true"/>
+</input>
+<output>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="592960278" blockType="plugins.ofuica.metro.protocols.MetroAttachSequence" className="plugins.ofuica.metro.protocols.MetroAttachSequence" collapsed="true" definedName="Metro attach x profile" height="155" keepsResults="true" width="237" xLocation="965" yLocation="161">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="My Session" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+<variable ID="name" name="name" runtime="false" value="x Profile" visible="true"/>
+<variable ID="notes" name="notes" runtime="false" value="PSF X profile" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="2049780943" blockType="plugins.ofuica.metro.protocols.MetroAttachSequence" className="plugins.ofuica.metro.protocols.MetroAttachSequence" collapsed="true" definedName="Metro attach y profile" height="155" keepsResults="true" width="243" xLocation="969" yLocation="202">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="My Session" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+<variable ID="name" name="name" runtime="false" value="y profile" visible="true"/>
+<variable ID="notes" name="notes" runtime="false" value="PSF Y Profile" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="152639081" blockType="plugins.ofuica.metro.protocols.MetroAttachSequence" className="plugins.ofuica.metro.protocols.MetroAttachSequence" collapsed="true" definedName="Metro attach z profile" height="155" keepsResults="true" width="243" xLocation="971" yLocation="246">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="My Session" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+<variable ID="name" name="name" runtime="false" value="z Profile" visible="true"/>
+<variable ID="notes" name="notes" runtime="false" value="PSF z profile" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="1789844063" blockType="plugins.ylemontag.mathoperations.MathOperationBinaryBlock" className="plugins.ylemontag.mathoperations.MathOperationPlugin" collapsed="true" definedName="Diff resolution" height="127" keepsResults="true" width="241" xLocation="951" yLocation="304">
+<variables>
+<input>
+<variable ID="Operation" name="op" runtime="false" value="SUBTRACT" visible="true"/>
+<variable ID="In 1" name="a" runtime="false" type="[D" visible="true"/>
+<variable ID="In 2" name="b" runtime="false" type="[D" visible="true"/>
+</input>
+<output>
+<variable ID="Out" name="result" runtime="false" type="[D" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1301708464" blockType="plugins.ofuica.metro.protocols.MetroAttachSequence" className="plugins.ofuica.metro.protocols.MetroAttachSequence" collapsed="true" definedName="Metro attach x profile" height="155" keepsResults="true" width="245" xLocation="709" yLocation="346">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="My Session" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+<variable ID="name" name="name" runtime="false" value="x profile" visible="true"/>
+<variable ID="notes" name="notes" runtime="false" value="PSF X profile" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="1843356837" blockType="plugins.ofuica.metro.protocols.MetroAttachSequence" className="plugins.ofuica.metro.protocols.MetroAttachSequence" collapsed="true" definedName="Metro attach y profile" height="155" keepsResults="true" width="241" xLocation="707" yLocation="388">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="My Session" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+<variable ID="name" name="name" runtime="false" value="y profile" visible="true"/>
+<variable ID="notes" name="notes" runtime="false" value="PSF Y Profile" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="725033899" blockType="plugins.ofuica.metro.protocols.MetroAttachSequence" className="plugins.ofuica.metro.protocols.MetroAttachSequence" collapsed="true" definedName="Metro attach z profile" height="155" keepsResults="true" width="237" xLocation="708" yLocation="428">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="My Session" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+<variable ID="name" name="name" runtime="false" value="z profile" visible="true"/>
+<variable ID="notes" name="notes" runtime="false" value="PSF Z Profile" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="460956554" blockType="plugins.ofuica.metro.protocols.MetroAnnotate" className="plugins.ofuica.metro.protocols.MetroAnnotate" collapsed="true" definedName="Metro annotate put diff" height="175" keepsResults="true" width="224" xLocation="1219" yLocation="304">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="My Session" visible="true"/>
+<variable ID="action" name="action" runtime="false" value="PUT" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="key" name="key" runtime="false" value="DIF_RES_MESURE" visible="true"/>
+<variable ID="value" name="value" runtime="false" type="[D" visible="true"/>
+</input>
+<output>
+<variable ID="value" name="value" runtime="false" type="[D" visible="true"/>
+</output>
+</variables>
+</block>
+<block CommandLineID="" ID="1102937457" blockType="plugins.adufour.blocks.tools.input.Text" className="plugins.adufour.blocks.tools.input.Text" collapsed="true" definedName="diff calculated using measured PSF" height="62" keepsResults="true" width="248" xLocation="1217" yLocation="379">
+<variables>
+<input>
+<variable ID="text" name="text" runtime="false" value="Diff computed using measured PSF" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="1114339894" blockType="plugins.adufour.blocks.tools.text.AppendText" className="plugins.adufour.blocks.Blocks" collapsed="true" definedName="Append text" height="129" keepsResults="true" width="179" xLocation="1219" yLocation="427">
+<variables>
+<input>
+<variable ID="input" name="input" runtime="false" visible="true"/>
+<variable ID="Separator" name="Separator" runtime="false" value="guid:" visible="true"/>
+<variable ID="Suffix" name="Suffix" runtime="false" visible="true"/>
+</input>
+<output>
+<variable ID="output" name="output" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="931636501" blockType="plugins.ofuica.metro.protocols.MetroComment" className="plugins.ofuica.metro.protocols.MetroComment" collapsed="true" definedName="Metro comment diff" height="109" keepsResults="true" width="227" xLocation="1218" yLocation="471">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="My Session" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="commentary" name="commentary" runtime="false" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="1219727354" blockType="plugins.ofuica.metro.protocols.MetroComment" className="plugins.ofuica.metro.protocols.MetroComment" collapsed="true" definedName="Metro comment" height="109" keepsResults="true" width="201" xLocation="1020" yLocation="74">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="My Session" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="commentary" name="commentary" runtime="false" value="Calculated using Blind deconvolution" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="570955851" blockType="plugins.ofuica.metro.protocols.MetroAnnotate" className="plugins.ofuica.metro.protocols.MetroAnnotate" collapsed="true" definedName="Metro annotate get system" height="175" keepsResults="true" width="271" xLocation="248" yLocation="530">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="My Session" visible="true"/>
+<variable ID="action" name="action" runtime="false" value="GET" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="key" name="key" runtime="false" value="MICROSCOPE" visible="true"/>
+<variable ID="value" name="value" runtime="false" type="java.lang.Object" value="" visible="true"/>
+</input>
+<output>
+<variable ID="value" name="value" runtime="false" type="java.lang.Object" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="260687969" blockType="plugins.ofuica.metro.protocols.MetroAnnotate" className="plugins.ofuica.metro.protocols.MetroAnnotate" collapsed="true" definedName="Metro annotate put system" height="175" keepsResults="true" width="198" xLocation="937" yLocation="530">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="" visible="true"/>
+<variable ID="action" name="action" runtime="false" value="PUT" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="key" name="key" runtime="false" visible="true"/>
+<variable ID="value" name="value" runtime="false" type="java.lang.Object" value="" visible="true"/>
+</input>
+<output>
+<variable ID="value" name="value" runtime="false" type="java.lang.Object" visible="true"/>
+</output>
+</variables>
+</block>
+</blocks>
+<links>
+<link dstBlockID="1584041873" dstVarID="url" srcBlockID="1517803501" srcVarID="text"/>
+<link dstBlockID="1584041873" dstVarID="access key" srcBlockID="1664936069" srcVarID="text"/>
+<link dstBlockID="2008611696" dstVarID="id" srcBlockID="224892493" srcVarID="integer"/>
+<link dstBlockID="1136233867" dstVarID="id" srcBlockID="559094124" srcVarID="integer"/>
+<link dstBlockID="1117117649" dstVarID="image" srcBlockID="2008611696" srcVarID="sequence"/>
+<link dstBlockID="1886934951" dstVarID="sequence" srcBlockID="1117117649" srcVarID="outputPSF"/>
+<link dstBlockID="172816951" dstVarID="sequence" srcBlockID="1136233867" srcVarID="sequence"/>
+<link dstBlockID="96061605" dstVarID="sequence" srcBlockID="1117117649" srcVarID="output"/>
+<link dstBlockID="592960278" dstVarID="sequence" srcBlockID="1886934951" srcVarID="xProfile"/>
+<link dstBlockID="592960278" dstVarID="id" srcBlockID="2008611696" srcVarID="id"/>
+<link dstBlockID="2049780943" dstVarID="id" srcBlockID="592960278" srcVarID="id"/>
+<link dstBlockID="2049780943" dstVarID="sequence" srcBlockID="1886934951" srcVarID="yProfile"/>
+<link dstBlockID="152639081" dstVarID="id" srcBlockID="2049780943" srcVarID="id"/>
+<link dstBlockID="152639081" dstVarID="sequence" srcBlockID="1886934951" srcVarID="zProfile"/>
+<link dstBlockID="1789844063" dstVarID="In 1" srcBlockID="1886934951" srcVarID="resolutions"/>
+<link dstBlockID="1789844063" dstVarID="In 2" srcBlockID="172816951" srcVarID="resolutions"/>
+<link dstBlockID="1301708464" dstVarID="id" srcBlockID="1136233867" srcVarID="id"/>
+<link dstBlockID="1301708464" dstVarID="sequence" srcBlockID="172816951" srcVarID="xProfile"/>
+<link dstBlockID="1843356837" dstVarID="sequence" srcBlockID="172816951" srcVarID="yProfile"/>
+<link dstBlockID="1843356837" dstVarID="id" srcBlockID="1301708464" srcVarID="id"/>
+<link dstBlockID="725033899" dstVarID="sequence" srcBlockID="172816951" srcVarID="zProfile"/>
+<link dstBlockID="725033899" dstVarID="id" srcBlockID="1843356837" srcVarID="id"/>
+<link dstBlockID="460956554" dstVarID="id" srcBlockID="152639081" srcVarID="id"/>
+<link dstBlockID="460956554" dstVarID="value" srcBlockID="1789844063" srcVarID="Out" srcVarType="[D"/>
+<link dstBlockID="931636501" dstVarID="id" srcBlockID="460956554" srcVarID="id"/>
+<link dstBlockID="931636501" dstVarID="commentary" srcBlockID="1114339894" srcVarID="output"/>
+<link dstBlockID="1114339894" dstVarID="input" srcBlockID="1102937457" srcVarID="text"/>
+<link dstBlockID="1114339894" dstVarID="Suffix" srcBlockID="725033899" srcVarID="id"/>
+<link dstBlockID="96061605" dstVarID="id reference" srcBlockID="2008611696" srcVarID="id"/>
+<link dstBlockID="1219727354" dstVarID="id" srcBlockID="96061605" srcVarID="id"/>
+<link dstBlockID="570955851" dstVarID="id" srcBlockID="1136233867" srcVarID="id"/>
+<link dstBlockID="260687969" dstVarID="key" srcBlockID="570955851" srcVarID="key"/>
+<link dstBlockID="260687969" dstVarID="id" srcBlockID="1219727354" srcVarID="id"/>
+</links>
+</protocol>

@@ -1,0 +1,29 @@
+<protocol VERSION="4">
+<blocks>
+<block ID="1715691469" blockType="plugins.ofuica.metro.protocols.MetroLogin" className="plugins.ofuica.metro.protocols.MetroLogin" collapsed="false" definedName="Metro login" height="156" keepsResults="true" width="349" xLocation="116" yLocation="56">
+<variables>
+<input>
+<variable ID="service" name="service" runtime="false" value="OpenImadis" visible="true"/>
+<variable ID="url" name="url" runtime="false" value="192.168.99.100:8080" visible="true"/>
+<variable ID="access key" name="access key" runtime="false" value="lJI0l4oV9UswRKqpxVtNr2yUYvLl1BnDusYgK2Jd" visible="true"/>
+<variable ID="session name" name="session name" runtime="false" value="OpenImadis#1" visible="true"/>
+</input>
+<output>
+<variable ID="session" name="session" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1584347865" blockType="plugins.ofuica.metro.protocols.MetroGetSequence" className="plugins.ofuica.metro.protocols.MetroGetSequence" collapsed="false" definedName="Metro get sequence" height="107" keepsResults="true" width="225" xLocation="552" yLocation="105">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="OpenImadis#1" visible="true"/>
+<variable ID="id" name="id" runtime="false" value="0" visible="true"/>
+</input>
+<output>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+</blocks>
+<links/>
+</protocol>

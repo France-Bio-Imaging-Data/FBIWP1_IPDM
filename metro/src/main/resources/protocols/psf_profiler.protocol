@@ -1,0 +1,337 @@
+<protocol VERSION="4">
+<blocks>
+<block ID="1810820145" blockType="plugins.adufour.blocks.tools.input.Integers" className="plugins.adufour.blocks.tools.input.Integers" collapsed="false" definedName="Integers" height="63" keepsResults="true" width="154" xLocation="21" yLocation="23">
+<variables>
+<input>
+<variable ID="integers" name="integers" runtime="false" value="11845" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<workflow ID="351352724" blockType="plugins.ofuica.metro.protocols.MetroBatch" className="plugins.ofuica.metro.protocols.MetroBatch" collapsed="false" definedName="Metro batch" height="618" keepsResults="true" width="1242" xLocation="19" yLocation="95">
+<blocks>
+<block ID="922700697" blockType="plugins.ofuica.metro.protocols.PSFProfiler" className="plugins.ofuica.metro.protocols.PSFProfiler" collapsed="false" definedName="PSF profiler" height="208" keepsResults="true" width="216" xLocation="345" yLocation="7">
+<variables>
+<input>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+</input>
+<output>
+<variable ID="resolutions" name="resolutions" runtime="false" visible="true"/>
+<variable ID="units" name="units" runtime="false" visible="true"/>
+<variable ID="XParams" name="XParams" runtime="false" visible="true"/>
+<variable ID="YParams" name="YParams" runtime="false" visible="true"/>
+<variable ID="ZParams" name="ZParams" runtime="false" visible="true"/>
+<variable ID="xProfile" name="xProfile" runtime="false" visible="true"/>
+<variable ID="yProfile" name="yProfile" runtime="false" visible="true"/>
+<variable ID="zProfile" name="zProfile" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="2015965879" blockType="plugins.adufour.blocks.tools.Indexer" className="plugins.adufour.blocks.tools.Indexer" collapsed="false" definedName="Indexer" height="107" keepsResults="true" width="149" xLocation="29" yLocation="232">
+<variables>
+<input>
+<variable ID="array" name="array" runtime="false" type="[D" visible="true"/>
+<variable ID="index" name="index" runtime="false" value="0" visible="true"/>
+</input>
+<output>
+<variable ID="element" name="element" runtime="false" type="double" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="719428213" blockType="plugins.ofuica.metro.protocols.MetroAnnotate" className="plugins.ofuica.metro.protocols.MetroAnnotate" collapsed="false" definedName="Metro annotate" height="111" keepsResults="true" width="198" xLocation="285" yLocation="229">
+<variables>
+<input>
+<variable ID="action" name="action" runtime="false" value="GET" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="key" name="key" runtime="false" value="X Resolution" visible="true"/>
+<variable ID="value" name="value" runtime="false" type="double" visible="true"/>
+</input>
+<output>
+<variable ID="value" name="value" runtime="false" type="double" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1340943839" blockType="plugins.ofuica.metro.protocols.MetroAnnotate" className="plugins.ofuica.metro.protocols.MetroAnnotate" collapsed="false" definedName="Metro annotate" height="145" keepsResults="true" width="198" xLocation="599" yLocation="202">
+<variables>
+<input>
+<variable ID="action" name="action" runtime="false" value="PUT" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="key" name="key" runtime="false" value="Units" visible="true"/>
+<variable ID="value" name="value" runtime="false" type="java.lang.String" visible="true"/>
+</input>
+<output>
+<variable ID="value" name="value" runtime="false" type="java.lang.String" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="2037873007" blockType="plugins.ofuica.metro.protocols.MetroAnnotate" className="plugins.ofuica.metro.protocols.MetroAnnotate" collapsed="false" definedName="Metro annotate" height="148" keepsResults="true" width="198" xLocation="601" yLocation="348">
+<variables>
+<input>
+<variable ID="action" name="action" runtime="false" value="PUT" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="key" name="key" runtime="false" value="xParams" visible="true"/>
+<variable ID="value" name="value" runtime="false" type="java.lang.String" visible="true"/>
+</input>
+<output>
+<variable ID="value" name="value" runtime="false" type="java.lang.String" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="728234073" blockType="plugins.ofuica.metro.protocols.MetroAnnotate" className="plugins.ofuica.metro.protocols.MetroAnnotate" collapsed="false" definedName="Metro annotate" height="133" keepsResults="true" width="198" xLocation="603" yLocation="505">
+<variables>
+<input>
+<variable ID="action" name="action" runtime="false" value="PUT" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="key" name="key" runtime="false" value="yParams" visible="true"/>
+<variable ID="value" name="value" runtime="false" type="java.lang.String" visible="true"/>
+</input>
+<output>
+<variable ID="value" name="value" runtime="false" type="java.lang.String" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="726735227" blockType="plugins.ofuica.metro.protocols.MetroAnnotate" className="plugins.ofuica.metro.protocols.MetroAnnotate" collapsed="false" definedName="Metro annotate" height="148" keepsResults="true" width="198" xLocation="607" yLocation="646">
+<variables>
+<input>
+<variable ID="action" name="action" runtime="false" value="PUT" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="key" name="key" runtime="false" value="zParams" visible="true"/>
+<variable ID="value" name="value" runtime="false" type="java.lang.String" visible="true"/>
+</input>
+<output>
+<variable ID="value" name="value" runtime="false" type="java.lang.String" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="637848071" blockType="plugins.ofuica.metro.protocols.MetroAttachSequence" className="plugins.ofuica.metro.protocols.MetroAttachSequence" collapsed="false" definedName="Metro attach sequence" height="133" keepsResults="true" width="243" xLocation="902" yLocation="215">
+<variables>
+<input>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+<variable ID="name" name="name" runtime="false" value="XProfile.tif" visible="true"/>
+<variable ID="notes" name="notes" runtime="false" value="Generated by MetroLoj" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="1603966352" blockType="plugins.adufour.blocks.tools.Indexer" className="plugins.adufour.blocks.tools.Indexer" collapsed="false" definedName="Indexer" height="107" keepsResults="true" width="149" xLocation="30" yLocation="349">
+<variables>
+<input>
+<variable ID="array" name="array" runtime="false" type="[D" visible="true"/>
+<variable ID="index" name="index" runtime="false" value="1" visible="true"/>
+</input>
+<output>
+<variable ID="element" name="element" runtime="false" type="double" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1178005737" blockType="plugins.adufour.blocks.tools.Indexer" className="plugins.adufour.blocks.tools.Indexer" collapsed="false" definedName="Indexer" height="107" keepsResults="true" width="149" xLocation="33" yLocation="471">
+<variables>
+<input>
+<variable ID="array" name="array" runtime="false" type="[D" visible="true"/>
+<variable ID="index" name="index" runtime="false" value="2" visible="true"/>
+</input>
+<output>
+<variable ID="element" name="element" runtime="false" type="double" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="827050093" blockType="plugins.ofuica.metro.protocols.MetroAnnotate" className="plugins.ofuica.metro.protocols.MetroAnnotate" collapsed="false" definedName="Metro annotate" height="111" keepsResults="true" width="198" xLocation="287" yLocation="346">
+<variables>
+<input>
+<variable ID="action" name="action" runtime="false" value="GET" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="key" name="key" runtime="false" value="Y Resolution" visible="true"/>
+<variable ID="value" name="value" runtime="false" type="double" visible="true"/>
+</input>
+<output>
+<variable ID="value" name="value" runtime="false" type="double" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1227011393" blockType="plugins.ofuica.metro.protocols.MetroAnnotate" className="plugins.ofuica.protocols.MetroAnnotate" collapsed="false" definedName="Metro annotate" height="111" keepsResults="true" width="198" xLocation="294" yLocation="464">
+<variables>
+<input>
+<variable ID="action" name="action" runtime="false" value="GET" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="key" name="key" runtime="false" value="Z Resolution" visible="true"/>
+<variable ID="value" name="value" runtime="false" type="double" visible="true"/>
+</input>
+<output>
+<variable ID="value" name="value" runtime="false" type="double" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1532570372" blockType="plugins.adufour.blocks.tools.Display" className="plugins.adufour.blocks.tools.Display" collapsed="false" definedName="Display" height="192" keepsResults="true" width="220" xLocation="692" yLocation="3">
+<variables>
+<input>
+<variable ID="object" name="object" runtime="false" type="icy.sequence.Sequence" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="1966064824" blockType="plugins.ofuica.metro.protocols.MetroAttachSequence" className="plugins.ofuica.metro.protocols.MetroAttachSequence" collapsed="false" definedName="Metro attach sequence" height="145" keepsResults="true" width="249" xLocation="899" yLocation="365">
+<variables>
+<input>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+<variable ID="name" name="name" runtime="false" value="YProfile.tif" visible="true"/>
+<variable ID="notes" name="notes" runtime="false" value="Generated by MetroLoj" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="487572868" blockType="plugins.ofuica.metro.protocols.MetroAttachSequence" className="plugins.ofuica.protocols.metro.MetroAttachSequence" collapsed="false" definedName="Metro attach sequence" height="133" keepsResults="true" width="243" xLocation="903" yLocation="533">
+<variables>
+<input>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+<variable ID="name" name="name" runtime="false" value="ZProfile.tif" visible="true"/>
+<variable ID="notes" name="notes" runtime="false" value="Generated by MetroLoj" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="185714027" blockType="plugins.adufour.blocks.tools.Display" className="plugins.adufour.blocks.tools.Display" collapsed="false" definedName="Display" height="136" keepsResults="true" width="150" xLocation="1170" yLocation="200">
+<variables>
+<input>
+<variable ID="object" name="object" runtime="false" type="icy.sequence.Sequence" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="1485195378" blockType="plugins.adufour.blocks.tools.Display" className="plugins.adufour.blocks.tools.Display" collapsed="false" definedName="Display" height="149" keepsResults="true" width="150" xLocation="1175" yLocation="350">
+<variables>
+<input>
+<variable ID="object" name="object" runtime="false" type="icy.sequence.Sequence" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="206784710" blockType="plugins.adufour.blocks.tools.Display" className="plugins.adufour.blocks.tools.Display" collapsed="false" definedName="Display" height="128" keepsResults="true" width="150" xLocation="1174" yLocation="523">
+<variables>
+<input>
+<variable ID="object" name="object" runtime="false" type="icy.sequence.Sequence" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+</blocks>
+<links>
+<link dstBlockID="922700697" dstVarID="sequence" srcBlockID="351352724" srcVarID="sequence"/>
+<link dstBlockID="719428213" dstVarID="id" srcBlockID="351352724" srcVarID="id"/>
+<link dstBlockID="2015965879" dstVarID="array" srcBlockID="922700697" srcVarID="resolutions"/>
+<link dstBlockID="1532570372" dstVarID="object" srcBlockID="922700697" srcVarID="sequence"/>
+<link dstBlockID="1340943839" dstVarID="value" srcBlockID="922700697" srcVarID="units"/>
+<link dstBlockID="2037873007" dstVarID="value" srcBlockID="922700697" srcVarID="XParams"/>
+<link dstBlockID="728234073" dstVarID="value" srcBlockID="922700697" srcVarID="YParams"/>
+<link dstBlockID="726735227" dstVarID="value" srcBlockID="922700697" srcVarID="ZParams"/>
+<link dstBlockID="637848071" dstVarID="sequence" srcBlockID="922700697" srcVarID="xProfile"/>
+<link dstBlockID="1966064824" dstVarID="sequence" srcBlockID="922700697" srcVarID="yProfile"/>
+<link dstBlockID="487572868" dstVarID="sequence" srcBlockID="922700697" srcVarID="zProfile"/>
+<link dstBlockID="1603966352" dstVarID="array" srcBlockID="2015965879" srcVarID="array" srcVarType="[D"/>
+<link dstBlockID="719428213" dstVarID="value" srcBlockID="2015965879" srcVarID="element" srcVarType="double"/>
+<link dstBlockID="827050093" dstVarID="id" srcBlockID="719428213" srcVarID="id"/>
+<link dstBlockID="1340943839" dstVarID="id" srcBlockID="719428213" srcVarID="id"/>
+<link dstBlockID="2037873007" dstVarID="id" srcBlockID="1340943839" srcVarID="id"/>
+<link dstBlockID="728234073" dstVarID="id" srcBlockID="2037873007" srcVarID="id"/>
+<link dstBlockID="726735227" dstVarID="id" srcBlockID="728234073" srcVarID="id"/>
+<link dstBlockID="637848071" dstVarID="id" srcBlockID="726735227" srcVarID="id"/>
+<link dstBlockID="1966064824" dstVarID="id" srcBlockID="637848071" srcVarID="id"/>
+<link dstBlockID="185714027" dstVarID="object" srcBlockID="637848071" srcVarID="sequence"/>
+<link dstBlockID="1178005737" dstVarID="array" srcBlockID="1603966352" srcVarID="array" srcVarType="[D"/>
+<link dstBlockID="827050093" dstVarID="value" srcBlockID="1603966352" srcVarID="element" srcVarType="double"/>
+<link dstBlockID="1227011393" dstVarID="value" srcBlockID="1178005737" srcVarID="element" srcVarType="double"/>
+<link dstBlockID="1227011393" dstVarID="id" srcBlockID="827050093" srcVarID="id"/>
+<link dstBlockID="487572868" dstVarID="id" srcBlockID="1966064824" srcVarID="id"/>
+<link dstBlockID="1485195378" dstVarID="object" srcBlockID="1966064824" srcVarID="sequence"/>
+<link dstBlockID="206784710" dstVarID="object" srcBlockID="487572868" srcVarID="sequence"/>
+</links>
+<variables>
+<input>
+<variable ID="array" blockID="351352724" value="" visible="true"/>
+<variable ID="host" blockID="351352724" value="cid.curie.fr:443" visible="true"/>
+<variable ID="code" blockID="351352724" value="auxJGBeKNIAJoGYr5pNtwRnI5jkXUyxUhDrhtpkf" visible="true"/>
+<variable ID="922700697:sequence" blockID="922700697" value="Active Sequence" visible="false"/>
+<variable ID="2015965879:array" blockID="2015965879" value="" visible="false"/>
+<variable ID="2015965879:index" blockID="2015965879" value="0" visible="false"/>
+<variable ID="719428213:action" blockID="719428213" value="GET" visible="false"/>
+<variable ID="719428213:id" blockID="719428213" value="0" visible="false"/>
+<variable ID="719428213:key" blockID="719428213" value="X Resolution" visible="false"/>
+<variable ID="719428213:value" blockID="719428213" value="" visible="false"/>
+<variable ID="1340943839:action" blockID="1340943839" value="PUT" visible="false"/>
+<variable ID="1340943839:id" blockID="1340943839" value="0" visible="false"/>
+<variable ID="1340943839:key" blockID="1340943839" value="Units" visible="false"/>
+<variable ID="1340943839:value" blockID="1340943839" value="" visible="false"/>
+<variable ID="2037873007:action" blockID="2037873007" value="PUT" visible="false"/>
+<variable ID="2037873007:id" blockID="2037873007" value="0" visible="false"/>
+<variable ID="2037873007:key" blockID="2037873007" value="xParams" visible="false"/>
+<variable ID="2037873007:value" blockID="2037873007" value="" visible="false"/>
+<variable ID="728234073:action" blockID="728234073" value="PUT" visible="false"/>
+<variable ID="728234073:id" blockID="728234073" value="0" visible="false"/>
+<variable ID="728234073:key" blockID="728234073" value="yParams" visible="false"/>
+<variable ID="728234073:value" blockID="728234073" value="" visible="false"/>
+<variable ID="726735227:action" blockID="726735227" value="PUT" visible="false"/>
+<variable ID="726735227:id" blockID="726735227" value="0" visible="false"/>
+<variable ID="726735227:key" blockID="726735227" value="zParams" visible="false"/>
+<variable ID="726735227:value" blockID="726735227" value="" visible="false"/>
+<variable ID="637848071:id" blockID="637848071" value="0" visible="false"/>
+<variable ID="637848071:sequence" blockID="637848071" value="Active Sequence" visible="false"/>
+<variable ID="637848071:name" blockID="637848071" value="XProfile.tif" visible="false"/>
+<variable ID="637848071:notes" blockID="637848071" value="Generated by MetroLoj" visible="false"/>
+<variable ID="1603966352:array" blockID="1603966352" value="" visible="false"/>
+<variable ID="1603966352:index" blockID="1603966352" value="1" visible="false"/>
+<variable ID="1178005737:array" blockID="1178005737" value="" visible="false"/>
+<variable ID="1178005737:index" blockID="1178005737" value="2" visible="false"/>
+<variable ID="827050093:action" blockID="827050093" value="GET" visible="false"/>
+<variable ID="827050093:id" blockID="827050093" value="0" visible="false"/>
+<variable ID="827050093:key" blockID="827050093" value="Y Resolution" visible="false"/>
+<variable ID="827050093:value" blockID="827050093" value="" visible="false"/>
+<variable ID="1227011393:action" blockID="1227011393" value="GET" visible="false"/>
+<variable ID="1227011393:id" blockID="1227011393" value="0" visible="false"/>
+<variable ID="1227011393:key" blockID="1227011393" value="Z Resolution" visible="false"/>
+<variable ID="1227011393:value" blockID="1227011393" value="" visible="false"/>
+<variable ID="1532570372:object" blockID="1532570372" value="" visible="false"/>
+<variable ID="1966064824:id" blockID="1966064824" value="0" visible="false"/>
+<variable ID="1966064824:sequence" blockID="1966064824" value="Active Sequence" visible="false"/>
+<variable ID="1966064824:name" blockID="1966064824" value="YProfile.tif" visible="false"/>
+<variable ID="1966064824:notes" blockID="1966064824" value="Generated by MetroLoj" visible="false"/>
+<variable ID="487572868:id" blockID="487572868" value="0" visible="false"/>
+<variable ID="487572868:sequence" blockID="487572868" value="Active Sequence" visible="false"/>
+<variable ID="487572868:name" blockID="487572868" value="ZProfile.tif" visible="false"/>
+<variable ID="487572868:notes" blockID="487572868" value="Generated by MetroLoj" visible="false"/>
+<variable ID="185714027:object" blockID="185714027" value="" visible="false"/>
+<variable ID="1485195378:object" blockID="1485195378" value="" visible="false"/>
+<variable ID="206784710:object" blockID="206784710" value="" visible="false"/>
+</input>
+<output>
+<variable ID="iteration" blockID="351352724" visible="true"/>
+<variable ID="element" blockID="351352724" visible="true"/>
+<variable ID="sequence" blockID="351352724" visible="true"/>
+<variable ID="id" blockID="351352724" visible="true"/>
+<variable ID="922700697:resolutions" blockID="922700697" visible="false"/>
+<variable ID="922700697:units" blockID="922700697" visible="false"/>
+<variable ID="922700697:XParams" blockID="922700697" visible="false"/>
+<variable ID="922700697:YParams" blockID="922700697" visible="false"/>
+<variable ID="922700697:ZParams" blockID="922700697" visible="false"/>
+<variable ID="922700697:xProfile" blockID="922700697" visible="false"/>
+<variable ID="922700697:yProfile" blockID="922700697" visible="false"/>
+<variable ID="922700697:zProfile" blockID="922700697" visible="false"/>
+<variable ID="2015965879:element" blockID="2015965879" visible="false"/>
+<variable ID="719428213:value" blockID="719428213" visible="false"/>
+<variable ID="1340943839:value" blockID="1340943839" visible="false"/>
+<variable ID="2037873007:value" blockID="2037873007" visible="false"/>
+<variable ID="728234073:value" blockID="728234073" visible="false"/>
+<variable ID="726735227:value" blockID="726735227" visible="false"/>
+<variable ID="1603966352:element" blockID="1603966352" visible="false"/>
+<variable ID="1178005737:element" blockID="1178005737" visible="false"/>
+<variable ID="827050093:value" blockID="827050093" visible="false"/>
+<variable ID="1227011393:value" blockID="1227011393" visible="false"/>
+</output>
+</variables>
+</workflow>
+</blocks>
+<links>
+<link dstBlockID="351352724" dstVarID="array" srcBlockID="1810820145" srcVarID="integers"/>
+</links>
+</protocol>

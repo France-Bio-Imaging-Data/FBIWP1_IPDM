@@ -1,0 +1,62 @@
+<protocol VERSION="4">
+<blocks>
+<block CommandLineID="AuthCode" ID="1098652435" blockType="plugins.adufour.blocks.tools.input.Text" className="plugins.adufour.blocks.tools.input.Text" collapsed="false" definedName="AuthCode" height="63" keepsResults="true" width="165" xLocation="29" yLocation="176">
+<variables>
+<input>
+<variable ID="text" name="text" runtime="false" value="AyIeEWGkkCDvPWFPSmqFhN7OFwpkEXVSRicCoLS5" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block CommandLineID="host" ID="1517716995" blockType="plugins.adufour.blocks.tools.input.Text" className="plugins.adufour.blocks.tools.input.Text" collapsed="false" definedName="host" height="58" keepsResults="true" width="137" xLocation="54" yLocation="114">
+<variables>
+<input>
+<variable ID="text" name="text" runtime="false" value="192.168.99.100:8080" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block CommandLineID="guids" ID="1414303580" blockType="plugins.adufour.blocks.tools.input.Integers" className="plugins.adufour.blocks.tools.input.Integers" collapsed="false" definedName="guids" height="63" keepsResults="true" width="138" xLocation="53" yLocation="51">
+<variables>
+<input>
+<variable ID="integers" name="integers" runtime="false" value="1" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<workflow ID="452133452" blockType="plugins.ofuica.metro.protocols.MetroBatch" className="plugins.ofuica.metro.protocols.MetroBatch" collapsed="false" definedName="Metro batch" height="196" keepsResults="true" width="488" xLocation="232" yLocation="52">
+<blocks>
+<block ID="1854347643" blockType="plugins.adufour.blocks.tools.Display" className="plugins.adufour.blocks.tools.Display" collapsed="false" definedName="Display" height="132" keepsResults="true" width="176" xLocation="261" yLocation="2">
+<variables>
+<input>
+<variable ID="object" name="object" runtime="false" type="icy.sequence.Sequence" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+</blocks>
+<links>
+<link dstBlockID="1854347643" dstVarID="object" srcBlockID="452133452" srcVarID="sequence"/>
+</links>
+<variables>
+<input>
+<variable ID="array" blockID="452133452" value="" visible="true"/>
+<variable ID="host" blockID="452133452" value="192.168.99.100:8080" visible="true"/>
+<variable ID="code" blockID="452133452" value="AyIeEWGkkCDvPWFPSmqFhN7OFwpkEXVSRicCoLS5" visible="true"/>
+<variable ID="1854347643:object" blockID="1854347643" value="" visible="false"/>
+</input>
+<output>
+<variable ID="iteration" blockID="452133452" visible="true"/>
+<variable ID="element" blockID="452133452" visible="true"/>
+<variable ID="sequence" blockID="452133452" visible="true"/>
+<variable ID="id" blockID="452133452" visible="true"/>
+</output>
+</variables>
+</workflow>
+</blocks>
+<links>
+<link dstBlockID="452133452" dstVarID="array" srcBlockID="1414303580" srcVarID="integers"/>
+<link dstBlockID="452133452" dstVarID="host" srcBlockID="1517716995" srcVarID="text"/>
+<link dstBlockID="452133452" dstVarID="code" srcBlockID="1098652435" srcVarID="text"/>
+</links>
+</protocol>

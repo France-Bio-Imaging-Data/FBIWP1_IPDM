@@ -1,0 +1,144 @@
+<protocol VERSION="4">
+<blocks>
+<block CommandLineID="psf_file" ID="2075843324" blockType="plugins.adufour.blocks.tools.input.File" className="plugins.adufour.blocks.tools.input.File" collapsed="true" definedName="PSF file" height="61" keepsResults="true" width="148" xLocation="62" yLocation="173">
+<variables>
+<input>
+<variable ID="file" name="file" runtime="false" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block CommandLineID="image_file" ID="562271416" blockType="plugins.adufour.blocks.tools.input.File" className="plugins.adufour.blocks.tools.input.File" collapsed="true" definedName="IMAGE file" height="61" keepsResults="true" width="136" xLocation="40" yLocation="340">
+<variables>
+<input>
+<variable ID="file" name="file" runtime="false" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="1796624411" blockType="plugins.adufour.blocks.tools.io.FileToSequence" className="plugins.adufour.blocks.tools.io.FileToSequence" collapsed="true" definedName="File to sequence" height="107" keepsResults="true" width="204" xLocation="236" yLocation="340">
+<variables>
+<input>
+<variable ID="input file" name="input file" runtime="false" visible="true"/>
+<variable ID="Series" name="Series" runtime="false" value="0" visible="true"/>
+</input>
+<output>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="73622084" blockType="plugins.mitiv.blinddeconv.MitivBlindDeconvolution" className="plugins.mitiv.deconv.MitivDeconvolution" collapsed="true" definedName="Mitiv blind deconvolution" height="623" keepsResults="true" width="361" xLocation="473" yLocation="340">
+<variables>
+<input>
+<variable ID="image" name="Sequence:" runtime="false" visible="true"/>
+<variable ID="channel" name="Canal:" runtime="false" value="0" visible="true"/>
+<variable ID="dxy" name="dxy(nm):" runtime="false" value="64.5" visible="true"/>
+<variable ID="dz" name="dz(nm):" runtime="false" value="128.0" visible="true"/>
+<variable ID="NA" name="NA:" runtime="false" value="1.4" visible="true"/>
+<variable ID="ni" name="ni:" runtime="false" value="1.518" visible="true"/>
+<variable ID="lambda" name="λ(nm):" runtime="false" value="542.0" visible="true"/>
+<variable ID="deadPixel" name="Bad data map:" runtime="false" value="Active Sequence" visible="true"/>
+<variable ID="gain" name="Gain:" runtime="false" value="1.0" visible="true"/>
+<variable ID="noise" name="Readout Noise:" runtime="false" value="10.0" visible="true"/>
+<variable ID="mu" name="Regularization level:" runtime="false" value="1.0E-5" visible="true"/>
+<variable ID="espilon" name="Threshold level:" runtime="false" value="0.01" visible="true"/>
+<variable ID="Postivity" name="Enforce nonnegativity:" runtime="false" value="true" visible="true"/>
+<variable ID="nbIteration" name="Number of iterations: " runtime="false" value="10" visible="true"/>
+<variable ID="restart" name="Starting point:" runtime="false" value="Active Sequence" visible="true"/>
+<variable ID="radial" name="Radially symmetric PSF" runtime="false" value="false" visible="true"/>
+<variable ID="nbAlphaCoef" name="Number of phase coefs Nα:" runtime="false" value="7" visible="true"/>
+<variable ID="nbBetaCoef" name="Number of modulus coefs Nβ:" runtime="false" value="0" visible="true"/>
+<variable ID="defocusMaxIter" name="Max. nb. of iterations for defocus:" runtime="false" value="20" visible="true"/>
+<variable ID="phaseMaxIter" name="Max. nb. of iterations for phase:" runtime="false" value="20" visible="true"/>
+<variable ID="modulusMaxIter" name="Max. nb. of iterations for modulus:" runtime="false" value="0" visible="true"/>
+<variable ID="bDecTotalIteration" name="Number of loops:" runtime="false" value="2" visible="true"/>
+</input>
+<output>
+<variable ID="outputSize" name="Output size:" runtime="false" visible="true"/>
+<variable ID="outputImage" name="Output Image" runtime="false" visible="true"/>
+<variable ID="outputPSF" name="Output PSF" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1624557551" blockType="plugins.adufour.blocks.tools.io.FileToSequence" className="plugins.adufour.blocks.tools.io.FileToSequence" collapsed="true" definedName="File to sequence" height="107" keepsResults="true" width="204" xLocation="357" yLocation="173">
+<variables>
+<input>
+<variable ID="input file" name="input file" runtime="false" visible="true"/>
+<variable ID="Series" name="Series" runtime="false" value="0" visible="true"/>
+</input>
+<output>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1022627865" blockType="plugins.ofuica.metro.protocols.PSFProfiler" className="plugins.ofuica.metro.protocols.PSFProfiler" collapsed="true" definedName="PSF profiler" height="237" keepsResults="true" width="216" xLocation="752" yLocation="173">
+<variables>
+<input>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+</input>
+<output>
+<variable ID="resolutions" name="resolutions" runtime="false" visible="true"/>
+<variable ID="units" name="units" runtime="false" visible="true"/>
+<variable ID="XParams" name="XParams" runtime="false" visible="true"/>
+<variable ID="YParams" name="YParams" runtime="false" visible="true"/>
+<variable ID="ZParams" name="ZParams" runtime="false" visible="true"/>
+<variable ID="xProfile" name="xProfile" runtime="false" visible="true"/>
+<variable ID="yProfile" name="yProfile" runtime="false" visible="true"/>
+<variable ID="zProfile" name="zProfile" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="2000614946" blockType="plugins.ofuica.metro.protocols.PSFProfiler" className="plugins.ofuica.metro.protocols.PSFProfiler" collapsed="true" definedName="PSF profiler" height="237" keepsResults="true" width="216" xLocation="755" yLocation="340">
+<variables>
+<input>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+</input>
+<output>
+<variable ID="resolutions" name="resolutions" runtime="false" visible="true"/>
+<variable ID="units" name="units" runtime="false" visible="true"/>
+<variable ID="XParams" name="XParams" runtime="false" visible="true"/>
+<variable ID="YParams" name="YParams" runtime="false" visible="true"/>
+<variable ID="ZParams" name="ZParams" runtime="false" visible="true"/>
+<variable ID="xProfile" name="xProfile" runtime="false" visible="true"/>
+<variable ID="yProfile" name="yProfile" runtime="false" visible="true"/>
+<variable ID="zProfile" name="zProfile" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block CommandLineID="result_file" ID="983800531" blockType="plugins.adufour.blocks.tools.input.File" className="plugins.adufour.blocks.tools.input.File" collapsed="true" definedName="Result's FILE" height="61" keepsResults="true" width="181" xLocation="33" yLocation="569">
+<variables>
+<input>
+<variable ID="file" name="file" runtime="false" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="286324827" blockType="plugins.tprovoost.scripteditor.scriptblock.Javascript" className="plugins.tprovoost.scripteditor.scriptblock.Javascript" collapsed="false" definedName="Generate Report" height="713" keepsResults="true" width="763" xLocation="987" yLocation="521">
+<variables>
+<input>
+<variable ID="Script" name="" runtime="false" value="importClass(Packages.icy.util.StringUtil)&#10;importClass(Packages.icy.file.FileUtil)&#10;importClass(Packages.plugins.adufour.workbooks.Workbooks)&#10;importClass(Packages.plugins.adufour.blocks.tools.io.WorkbookToFile)&#10;&#10;resolutions_psf_real = input0&#10;resolutions_psf_synthetic = input1&#10;reportFile = input2&#10;imageFile = input3&#10;psfFile = input4&#10;&#10;book = Workbooks.createEmptyWorkbook()&#10;sheet = Workbooks.getSheet(book, &quot;Benchmarking&quot;)&#10;sheet.setValue(0, 0, &quot;Image file&quot;)&#10;sheet.setValue(0, 1, &quot;Resolution X&quot;)&#10;sheet.setValue(0, 2, &quot;Resolution Y&quot;)&#10;sheet.setValue(0, 3, &quot;Resolution Z&quot;)&#10;&#10;sheet.setValue(1, 0, FileUtil.getFileName(imageFile.getAbsolutePath(), false))&#10;sheet.setValue(1, 1, StringUtil.toString(resolutions_psf_synthetic[0]))&#10;sheet.setValue(1, 2, StringUtil.toString(resolutions_psf_synthetic[1]))&#10;sheet.setValue(1, 3, StringUtil.toString(resolutions_psf_synthetic[2]))&#10;&#10;sheet.setValue(2, 0, FileUtil.getFileName(psfFile.getAbsolutePath(), false))&#10;sheet.setValue(2, 1, StringUtil.toString(resolutions_psf_real[0]))&#10;sheet.setValue(2, 2, StringUtil.toString(resolutions_psf_real[1]))&#10;sheet.setValue(2, 3, StringUtil.toString(resolutions_psf_real[2]))&#10;&#10;WorkbookToFile.saveAsSpreadSheet(book, reportFile.getAbsolutePath(), WorkbookToFile.MergePolicy.Merge_sheets___excluding_first_row)&#10;" visible="true"/>
+<variable ID="Add Input" name="Add Input" runtime="false" value="4" visible="true"/>
+<variable ID="Add output" name="Add output" runtime="false" value="0" visible="true"/>
+<variable ID="input0" name="input0" runtime="false" type="[D" visible="true"/>
+<variable ID="1426318035" name="input1" runtime="true" type="[D" visible="true"/>
+<variable ID="608474180" name="input2" runtime="true" type="java.io.File" visible="true"/>
+<variable ID="657024046" name="input3" runtime="true" type="java.io.File" value="" visible="true"/>
+<variable ID="1260166691" name="input4" runtime="true" type="java.io.File" value="" visible="true"/>
+</input>
+<output>
+<variable ID="output0" name="output0" runtime="false" type="java.lang.Object" visible="true"/>
+</output>
+</variables>
+</block>
+</blocks>
+<links>
+<link dstBlockID="1624557551" dstVarID="input file" srcBlockID="2075843324" srcVarID="file"/>
+<link dstBlockID="1796624411" dstVarID="input file" srcBlockID="562271416" srcVarID="file"/>
+<link dstBlockID="73622084" dstVarID="image" srcBlockID="1796624411" srcVarID="sequence"/>
+<link dstBlockID="2000614946" dstVarID="sequence" srcBlockID="73622084" srcVarID="outputPSF"/>
+<link dstBlockID="1022627865" dstVarID="sequence" srcBlockID="1624557551" srcVarID="sequence"/>
+<link dstBlockID="286324827" dstVarID="input0" srcBlockID="1022627865" srcVarID="resolutions"/>
+<link dstBlockID="286324827" dstVarID="1426318035" srcBlockID="2000614946" srcVarID="resolutions"/>
+<link dstBlockID="286324827" dstVarID="608474180" srcBlockID="983800531" srcVarID="file"/>
+</links>
+</protocol>

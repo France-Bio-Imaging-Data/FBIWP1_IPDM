@@ -1,0 +1,68 @@
+<protocol VERSION="4">
+<blocks>
+<block CommandLineID="" ID="1702991365" blockType="plugins.adufour.blocks.tools.input.Folder" className="plugins.adufour.blocks.tools.input.Folder" collapsed="false" definedName="Output folder" height="61" keepsResults="true" width="188" xLocation="53" yLocation="221">
+<variables>
+<input>
+<variable ID="folder" name="folder" runtime="false" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="1184141701" blockType="plugins.ofuica.metro.protocols.OpenImadisClient" className="plugins.ofuica.metro.protocols.OpenImadisClient" collapsed="true" definedName="Open imadis client" height="129" keepsResults="true" width="220" xLocation="258" yLocation="36">
+<variables>
+<input>
+<variable ID="host" name="host" runtime="false" value="cid.curie.fr:443" visible="true"/>
+<variable ID="code" name="code" runtime="false" value="auxJGBeKNIAJoGYr5pNtwRnI5jkXUyxUhDrhtpkf" visible="true"/>
+</input>
+<output>
+<variable ID="client" name="client" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1979561202" blockType="plugins.ofuica.metro.protocols.GetOpenImadisImporter" className="plugins.ofuica.metro.protocols.GetOpenImadisImporter" collapsed="true" definedName="Get open imadis importer" height="83" keepsResults="true" width="263" xLocation="266" yLocation="102">
+<variables>
+<input>
+<variable ID="client" name="client" runtime="false" visible="true"/>
+</input>
+<output>
+<variable ID="importer" name="importer" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block CommandLineID="image_guid" ID="13320799" blockType="plugins.adufour.blocks.tools.input.Integer" className="plugins.adufour.blocks.tools.input.Integer" collapsed="false" definedName="Image GUID" height="63" keepsResults="true" width="177" xLocation="56" yLocation="124">
+<variables>
+<input>
+<variable ID="integer" name="integer" runtime="false" value="11866" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="321173373" blockType="plugins.ofuica.metro.protocols.MetroSequenceFromImporter" className="plugins.ofuica.metro.protocols.MetroSequenceFromImporter" collapsed="true" definedName="Download Image" height="107" keepsResults="true" width="210" xLocation="545" yLocation="150">
+<variables>
+<input>
+<variable ID="importer" name="importer" runtime="false" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+</input>
+<output>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="897780831" blockType="plugins.adufour.blocks.tools.io.SequenceToFile" className="plugins.adufour.blocks.tools.io.SequenceToFile" collapsed="false" definedName="Sequence to file" height="83" keepsResults="true" width="234" xLocation="557" yLocation="221">
+<variables>
+<input>
+<variable ID="folder" name="File or folder" runtime="false" visible="true"/>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+</blocks>
+<links>
+<link dstBlockID="897780831" dstVarID="folder" srcBlockID="1702991365" srcVarID="folder"/>
+<link dstBlockID="1979561202" dstVarID="client" srcBlockID="1184141701" srcVarID="client"/>
+<link dstBlockID="321173373" dstVarID="importer" srcBlockID="1979561202" srcVarID="importer"/>
+<link dstBlockID="321173373" dstVarID="id" srcBlockID="13320799" srcVarID="integer"/>
+<link dstBlockID="897780831" dstVarID="sequence" srcBlockID="321173373" srcVarID="sequence"/>
+</links>
+</protocol>

@@ -1,0 +1,542 @@
+<protocol VERSION="4">
+<blocks>
+<block CommandLineID="RecordIds" ID="234362534" blockType="plugins.adufour.blocks.tools.input.Integers" className="plugins.adufour.blocks.tools.input.Integers" collapsed="false" definedName="RecordIds" height="63" keepsResults="true" width="164" xLocation="13" yLocation="311">
+<variables>
+<input>
+<variable ID="integers" name="integers" runtime="false" value="" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block CommandLineID="host" ID="352705403" blockType="plugins.adufour.blocks.tools.input.Text" className="plugins.adufour.blocks.tools.input.Text" collapsed="false" definedName="host" height="63" keepsResults="true" width="131" xLocation="41" yLocation="59">
+<variables>
+<input>
+<variable ID="text" name="text" runtime="false" value="" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block CommandLineID="AuthCode" ID="1403338223" blockType="plugins.adufour.blocks.tools.input.Text" className="plugins.adufour.blocks.tools.input.Text" collapsed="false" definedName="AuthCode" height="63" keepsResults="true" width="165" xLocation="10" yLocation="177">
+<variables>
+<input>
+<variable ID="text" name="text" runtime="false" value="" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="582730026" blockType="plugins.ofuica.metro.protocols.MetroLogin" className="plugins.ofuica.metro.protocols.MetroLogin" collapsed="true" definedName="Metro login" height="149" keepsResults="true" width="241" xLocation="247" yLocation="69">
+<variables>
+<input>
+<variable ID="service" name="service" runtime="false" value="OpenImadis" visible="true"/>
+<variable ID="url" name="url" runtime="false" visible="true"/>
+<variable ID="access key" name="access key" runtime="false" visible="true"/>
+<variable ID="session name" name="session name" runtime="false" value="OpenImadisSession" visible="true"/>
+</input>
+<output>
+<variable ID="session" name="session" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block CommandLineID="" ID="1296774300" blockType="plugins.adufour.blocks.tools.input.Integer" className="plugins.adufour.blocks.tools.input.Integer" collapsed="false" definedName="PsFRef" height="66" keepsResults="true" width="161" xLocation="14" yLocation="419">
+<variables>
+<input>
+<variable ID="integer" name="integer" runtime="false" value="0" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<workflow ID="1141937666" blockType="plugins.adufour.blocks.lang.Batch" className="plugins.adufour.blocks.lang.Batch" collapsed="false" definedName="Batch" height="692" keepsResults="true" width="1301" xLocation="235" yLocation="209">
+<blocks>
+<block ID="1899008724" blockType="plugins.ofuica.metro.protocols.MetroGetSequence" className="plugins.ofuica.metro.protocols.MetroGetSequence" collapsed="true" definedName="Metro get sequence" height="107" keepsResults="true" width="225" xLocation="116" yLocation="106">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="OpenImadisSession" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+</input>
+<output>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="869052016" blockType="plugins.mitiv.blinddeconv.MitivBlindDeconvolution" className="plugins.mitiv.deconv.MitivDeconvolution" collapsed="true" definedName="Mitiv blind deconvolution" height="623" keepsResults="true" width="361" xLocation="106" yLocation="278">
+<variables>
+<input>
+<variable ID="image" name="Sequence:" runtime="false" visible="true"/>
+<variable ID="channel" name="Canal:" runtime="false" value="0" visible="true"/>
+<variable ID="dxy" name="dxy(nm):" runtime="false" value="64.5" visible="true"/>
+<variable ID="dz" name="dz(nm):" runtime="false" value="128.0" visible="true"/>
+<variable ID="NA" name="NA:" runtime="false" value="1.4" visible="true"/>
+<variable ID="ni" name="ni:" runtime="false" value="1.518" visible="true"/>
+<variable ID="lambda" name="λ(nm):" runtime="false" value="542.0" visible="true"/>
+<variable ID="deadPixel" name="Bad data map:" runtime="false" value="Active Sequence" visible="true"/>
+<variable ID="gain" name="Gain:" runtime="false" value="1.0" visible="true"/>
+<variable ID="noise" name="Readout Noise:" runtime="false" value="10.0" visible="true"/>
+<variable ID="mu" name="Regularization level:" runtime="false" value="1.0E-5" visible="true"/>
+<variable ID="espilon" name="Threshold level:" runtime="false" value="0.01" visible="true"/>
+<variable ID="Postivity" name="Enforce nonnegativity:" runtime="false" value="true" visible="true"/>
+<variable ID="nbIteration" name="Number of iterations: " runtime="false" value="10" visible="true"/>
+<variable ID="restart" name="Starting point:" runtime="false" value="Active Sequence" visible="true"/>
+<variable ID="radial" name="Radially symmetric PSF" runtime="false" value="false" visible="true"/>
+<variable ID="nbAlphaCoef" name="Number of phase coefs Nα:" runtime="false" value="7" visible="true"/>
+<variable ID="nbBetaCoef" name="Number of modulus coefs Nβ:" runtime="false" value="0" visible="true"/>
+<variable ID="defocusMaxIter" name="Max. nb. of iterations for defocus:" runtime="false" value="20" visible="true"/>
+<variable ID="phaseMaxIter" name="Max. nb. of iterations for phase:" runtime="false" value="20" visible="true"/>
+<variable ID="modulusMaxIter" name="Max. nb. of iterations for modulus:" runtime="false" value="0" visible="true"/>
+<variable ID="bDecTotalIteration" name="Number of loops:" runtime="false" value="2" visible="true"/>
+</input>
+<output>
+<variable ID="outputSize" name="Output size:" runtime="false" visible="true"/>
+<variable ID="outputImage" name="Output Image" runtime="false" visible="true"/>
+<variable ID="outputPSF" name="Output PSF" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1726182739" blockType="plugins.ofuica.metro.protocols.MetroUpload" className="plugins.ofuica.metro.protocols.MetroUpload" collapsed="true" definedName="Metro upload" height="122" keepsResults="true" width="247" xLocation="550" yLocation="106">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="OpenImadisSession" visible="true"/>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+<variable ID="id reference" name="id reference" runtime="false" visible="true"/>
+</input>
+<output>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block CommandLineID="" ID="1419972956" blockType="plugins.adufour.blocks.tools.input.Text" className="plugins.adufour.blocks.tools.input.Text" collapsed="false" definedName="Text" height="60" keepsResults="true" width="228" xLocation="896" yLocation="10">
+<variables>
+<input>
+<variable ID="text" name="text" runtime="false" value="PSF image from guid" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="1767316448" blockType="plugins.adufour.blocks.tools.text.AppendText" className="plugins.adufour.blocks.Blocks" collapsed="true" definedName="Append text" height="129" keepsResults="true" width="179" xLocation="898" yLocation="83">
+<variables>
+<input>
+<variable ID="input" name="input" runtime="false" visible="true"/>
+<variable ID="Separator" name="Separator" runtime="false" value=":" visible="true"/>
+<variable ID="Suffix" name="Suffix" runtime="false" visible="true"/>
+</input>
+<output>
+<variable ID="output" name="output" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1059712602" blockType="plugins.ofuica.metro.protocols.MetroUpload" className="plugins.ofuica.metro.protocols.MetroUpload" collapsed="true" definedName="Metro upload" height="129" keepsResults="true" width="231" xLocation="547" yLocation="218">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="OpenImadisSession" visible="true"/>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+<variable ID="id reference" name="id reference" runtime="false" visible="true"/>
+</input>
+<output>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1709772280" blockType="plugins.ofuica.metro.protocols.MetroComment" className="plugins.ofuica.metro.protocols.MetroComment" collapsed="true" definedName="Metro comment" height="109" keepsResults="true" width="213" xLocation="893" yLocation="131">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="OpenImadisSession" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="commentary" name="commentary" runtime="false" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block CommandLineID="" ID="1086980581" blockType="plugins.adufour.blocks.tools.input.Text" className="plugins.adufour.blocks.tools.input.Text" collapsed="false" definedName="Text" height="63" keepsResults="true" width="239" xLocation="899" yLocation="247">
+<variables>
+<input>
+<variable ID="text" name="text" runtime="false" value="deconvoluted image from guid" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="720852508" blockType="plugins.adufour.blocks.tools.text.AppendText" className="plugins.adufour.blocks.Blocks" collapsed="true" definedName="Append text" height="129" keepsResults="true" width="179" xLocation="899" yLocation="323">
+<variables>
+<input>
+<variable ID="input" name="input" runtime="false" visible="true"/>
+<variable ID="Separator" name="Separator" runtime="false" value=":" visible="true"/>
+<variable ID="Suffix" name="Suffix" runtime="false" visible="true"/>
+</input>
+<output>
+<variable ID="output" name="output" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="411084689" blockType="plugins.ofuica.metro.protocols.MetroComment" className="plugins.ofuica.metro.protocols.MetroComment" collapsed="true" definedName="Metro comment" height="109" keepsResults="true" width="213" xLocation="897" yLocation="374">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="OpenImadisSession" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="commentary" name="commentary" runtime="false" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="1995145858" blockType="plugins.ofuica.metro.protocols.MetroGetSequence" className="plugins.ofuica.metro.protocols.MetroGetSequence" collapsed="true" definedName="Metro get sequence" height="107" keepsResults="true" width="225" xLocation="149" yLocation="662">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="OpenImadisSession" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+</input>
+<output>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1865298115" blockType="plugins.ofuica.metro.protocols.PSFProfiler" className="plugins.ofuica.metro.protocols.PSFProfiler" collapsed="true" definedName="PSF profiler Ref" height="237" keepsResults="true" width="216" xLocation="532" yLocation="817">
+<variables>
+<input>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+</input>
+<output>
+<variable ID="resolutions" name="resolutions" runtime="false" visible="true"/>
+<variable ID="units" name="units" runtime="false" visible="true"/>
+<variable ID="XParams" name="XParams" runtime="false" visible="true"/>
+<variable ID="YParams" name="YParams" runtime="false" visible="true"/>
+<variable ID="ZParams" name="ZParams" runtime="false" visible="true"/>
+<variable ID="xProfile" name="xProfile" runtime="false" visible="true"/>
+<variable ID="yProfile" name="yProfile" runtime="false" visible="true"/>
+<variable ID="zProfile" name="zProfile" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="298981375" blockType="plugins.ofuica.metro.protocols.PSFProfiler" className="plugins.ofuica.metro.protocols.PSFProfiler" collapsed="true" definedName="PSF profiler" height="237" keepsResults="true" width="216" xLocation="534" yLocation="564">
+<variables>
+<input>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+</input>
+<output>
+<variable ID="resolutions" name="resolutions" runtime="false" visible="true"/>
+<variable ID="units" name="units" runtime="false" visible="true"/>
+<variable ID="XParams" name="XParams" runtime="false" visible="true"/>
+<variable ID="YParams" name="YParams" runtime="false" visible="true"/>
+<variable ID="ZParams" name="ZParams" runtime="false" visible="true"/>
+<variable ID="xProfile" name="xProfile" runtime="false" visible="true"/>
+<variable ID="yProfile" name="yProfile" runtime="false" visible="true"/>
+<variable ID="zProfile" name="zProfile" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="661084572" blockType="plugins.adufour.blocks.tools.Indexer" className="plugins.adufour.blocks.tools.Indexer" collapsed="true" definedName="Indexer X" height="107" keepsResults="true" width="149" xLocation="778" yLocation="531">
+<variables>
+<input>
+<variable ID="array" name="array" runtime="false" type="[D" visible="true"/>
+<variable ID="index" name="index" runtime="false" value="0" visible="true"/>
+</input>
+<output>
+<variable ID="element" name="element" runtime="false" type="double" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="15694691" blockType="plugins.adufour.blocks.tools.Indexer" className="plugins.adufour.blocks.tools.Indexer" collapsed="true" definedName="Indexer X" height="107" keepsResults="true" width="180" xLocation="782" yLocation="778">
+<variables>
+<input>
+<variable ID="array" name="array" runtime="false" type="[D" visible="true"/>
+<variable ID="index" name="index" runtime="false" value="0" visible="true"/>
+</input>
+<output>
+<variable ID="element" name="element" runtime="false" type="double" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1543991123" blockType="plugins.ylemontag.mathoperations.MathOperationBinaryBlock" className="plugins.ylemontag.mathoperations.MathOperationPlugin" collapsed="true" definedName="Math operation binary X" height="127" keepsResults="true" width="253" xLocation="987" yLocation="566">
+<variables>
+<input>
+<variable ID="Operation" name="op" runtime="false" value="SUBTRACT" visible="true"/>
+<variable ID="In 1" name="a" runtime="false" type="double" visible="true"/>
+<variable ID="In 2" name="b" runtime="false" type="double" visible="true"/>
+</input>
+<output>
+<variable ID="Out" name="result" runtime="false" type="java.lang.Double" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1651637400" blockType="plugins.adufour.blocks.tools.Indexer" className="plugins.adufour.blocks.tools.Indexer" collapsed="true" definedName="Indexer Y" height="107" keepsResults="true" width="149" xLocation="775" yLocation="565">
+<variables>
+<input>
+<variable ID="array" name="array" runtime="false" type="[D" visible="true"/>
+<variable ID="index" name="index" runtime="false" value="1" visible="true"/>
+</input>
+<output>
+<variable ID="element" name="element" runtime="false" type="double" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1566554567" blockType="plugins.adufour.blocks.tools.Indexer" className="plugins.adufour.blocks.tools.Indexer" collapsed="true" definedName="Indexer Z" height="107" keepsResults="true" width="161" xLocation="776" yLocation="598">
+<variables>
+<input>
+<variable ID="array" name="array" runtime="false" type="[D" visible="true"/>
+<variable ID="index" name="index" runtime="false" value="2" visible="true"/>
+</input>
+<output>
+<variable ID="element" name="element" runtime="false" type="double" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="651884267" blockType="plugins.adufour.blocks.tools.Indexer" className="plugins.adufour.blocks.tools.Indexer" collapsed="true" definedName="Indexer Y" height="107" keepsResults="true" width="187" xLocation="782" yLocation="816">
+<variables>
+<input>
+<variable ID="array" name="array" runtime="false" type="[D" visible="true"/>
+<variable ID="index" name="index" runtime="false" value="1" visible="true"/>
+</input>
+<output>
+<variable ID="element" name="element" runtime="false" type="double" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="772286296" blockType="plugins.ylemontag.mathoperations.MathOperationBinaryBlock" className="plugins.ylemontag.mathoperations.MathOperationPlugin" collapsed="true" definedName="Math operation binary Y" height="127" keepsResults="true" width="241" xLocation="992" yLocation="620">
+<variables>
+<input>
+<variable ID="Operation" name="op" runtime="false" value="SUBTRACT" visible="true"/>
+<variable ID="In 1" name="a" runtime="false" type="double" visible="true"/>
+<variable ID="In 2" name="b" runtime="false" type="double" visible="true"/>
+</input>
+<output>
+<variable ID="Out" name="result" runtime="false" type="java.lang.Double" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1415146747" blockType="plugins.adufour.blocks.tools.Indexer" className="plugins.adufour.blocks.tools.Indexer" collapsed="true" definedName="Indexer Z" height="107" keepsResults="true" width="184" xLocation="784" yLocation="850">
+<variables>
+<input>
+<variable ID="array" name="array" runtime="false" type="[D" visible="true"/>
+<variable ID="index" name="index" runtime="false" value="2" visible="true"/>
+</input>
+<output>
+<variable ID="element" name="element" runtime="false" type="double" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1667927791" blockType="plugins.ylemontag.mathoperations.MathOperationBinaryBlock" className="plugins.ylemontag.mathoperations.MathOperationPlugin" collapsed="true" definedName="Math operation binary Z" height="127" keepsResults="true" width="241" xLocation="992" yLocation="669">
+<variables>
+<input>
+<variable ID="Operation" name="op" runtime="false" value="SUBTRACT" visible="true"/>
+<variable ID="In 1" name="a" runtime="false" type="double" visible="true"/>
+<variable ID="In 2" name="b" runtime="false" type="double" visible="true"/>
+</input>
+<output>
+<variable ID="Out" name="result" runtime="false" type="java.lang.Double" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="96428294" blockType="plugins.ofuica.metro.protocols.MetroAnnotate" className="plugins.ofuica.metro.protocols.MetroAnnotate" collapsed="true" definedName="Metro annotate X" height="175" keepsResults="true" width="198" xLocation="1282" yLocation="525">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="OpenImadisSession" visible="true"/>
+<variable ID="action" name="action" runtime="false" value="PUT" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="key" name="key" runtime="false" value="RES_X_DIF" visible="true"/>
+<variable ID="value" name="value" runtime="false" type="java.lang.Double" visible="true"/>
+</input>
+<output>
+<variable ID="value" name="value" runtime="false" type="java.lang.Double" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="827874947" blockType="plugins.ofuica.metro.protocols.MetroAnnotate" className="plugins.ofuica.metro.protocols.MetroAnnotate" collapsed="true" definedName="Metro annotate Y" height="175" keepsResults="true" width="198" xLocation="1286" yLocation="620">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="OpenImadisSession" visible="true"/>
+<variable ID="action" name="action" runtime="false" value="PUT" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="key" name="key" runtime="false" value="RES_Y_DIF" visible="true"/>
+<variable ID="value" name="value" runtime="false" type="java.lang.Double" visible="true"/>
+</input>
+<output>
+<variable ID="value" name="value" runtime="false" type="java.lang.Double" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="55732032" blockType="plugins.ofuica.metro.protocols.MetroAnnotate" className="plugins.ofuica.metro.protocols.MetroAnnotate" collapsed="true" definedName="Metro annotate Z" height="175" keepsResults="true" width="198" xLocation="1287" yLocation="721">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="OpenImadisSession" visible="true"/>
+<variable ID="action" name="action" runtime="false" value="PUT" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="key" name="key" runtime="false" value="RES_Z_DIF" visible="true"/>
+<variable ID="value" name="value" runtime="false" type="java.lang.Double" visible="true"/>
+</input>
+<output>
+<variable ID="value" name="value" runtime="false" type="java.lang.Double" visible="true"/>
+</output>
+</variables>
+</block>
+</blocks>
+<links>
+<link dstBlockID="1899008724" dstVarID="id" srcBlockID="1141937666" srcVarID="element" srcVarType="int"/>
+<link dstBlockID="869052016" dstVarID="image" srcBlockID="1899008724" srcVarID="sequence"/>
+<link dstBlockID="1726182739" dstVarID="id reference" srcBlockID="1899008724" srcVarID="id"/>
+<link dstBlockID="1726182739" dstVarID="sequence" srcBlockID="869052016" srcVarID="outputPSF"/>
+<link dstBlockID="1059712602" dstVarID="sequence" srcBlockID="869052016" srcVarID="outputImage"/>
+<link dstBlockID="298981375" dstVarID="sequence" srcBlockID="869052016" srcVarID="outputPSF"/>
+<link dstBlockID="1709772280" dstVarID="id" srcBlockID="1726182739" srcVarID="id"/>
+<link dstBlockID="1767316448" dstVarID="Suffix" srcBlockID="1726182739" srcVarID="id reference"/>
+<link dstBlockID="1059712602" dstVarID="id reference" srcBlockID="1726182739" srcVarID="id reference"/>
+<link dstBlockID="96428294" dstVarID="id" srcBlockID="1726182739" srcVarID="id"/>
+<link dstBlockID="1767316448" dstVarID="input" srcBlockID="1419972956" srcVarID="text"/>
+<link dstBlockID="1709772280" dstVarID="commentary" srcBlockID="1767316448" srcVarID="output"/>
+<link dstBlockID="720852508" dstVarID="Suffix" srcBlockID="1059712602" srcVarID="id reference"/>
+<link dstBlockID="411084689" dstVarID="id" srcBlockID="1059712602" srcVarID="id"/>
+<link dstBlockID="720852508" dstVarID="input" srcBlockID="1086980581" srcVarID="text"/>
+<link dstBlockID="411084689" dstVarID="commentary" srcBlockID="720852508" srcVarID="output"/>
+<link dstBlockID="1865298115" dstVarID="sequence" srcBlockID="1995145858" srcVarID="sequence"/>
+<link dstBlockID="15694691" dstVarID="array" srcBlockID="1865298115" srcVarID="resolutions"/>
+<link dstBlockID="651884267" dstVarID="array" srcBlockID="1865298115" srcVarID="resolutions"/>
+<link dstBlockID="1415146747" dstVarID="array" srcBlockID="1865298115" srcVarID="resolutions"/>
+<link dstBlockID="661084572" dstVarID="array" srcBlockID="298981375" srcVarID="resolutions"/>
+<link dstBlockID="1651637400" dstVarID="array" srcBlockID="298981375" srcVarID="resolutions"/>
+<link dstBlockID="1566554567" dstVarID="array" srcBlockID="298981375" srcVarID="resolutions"/>
+<link dstBlockID="1543991123" dstVarID="In 1" srcBlockID="661084572" srcVarID="element" srcVarType="double"/>
+<link dstBlockID="1543991123" dstVarID="In 2" srcBlockID="15694691" srcVarID="element" srcVarType="double"/>
+<link dstBlockID="96428294" dstVarID="value" srcBlockID="1543991123" srcVarID="Out" srcVarType="java.lang.Double"/>
+<link dstBlockID="772286296" dstVarID="In 1" srcBlockID="1651637400" srcVarID="element" srcVarType="double"/>
+<link dstBlockID="1667927791" dstVarID="In 1" srcBlockID="1566554567" srcVarID="element" srcVarType="double"/>
+<link dstBlockID="772286296" dstVarID="In 2" srcBlockID="651884267" srcVarID="element" srcVarType="double"/>
+<link dstBlockID="827874947" dstVarID="value" srcBlockID="772286296" srcVarID="Out" srcVarType="java.lang.Double"/>
+<link dstBlockID="1667927791" dstVarID="In 2" srcBlockID="1415146747" srcVarID="element" srcVarType="double"/>
+<link dstBlockID="55732032" dstVarID="value" srcBlockID="1667927791" srcVarID="Out" srcVarType="java.lang.Double"/>
+<link dstBlockID="827874947" dstVarID="id" srcBlockID="96428294" srcVarID="id"/>
+<link dstBlockID="55732032" dstVarID="id" srcBlockID="827874947" srcVarID="id"/>
+</links>
+<variables>
+<input>
+<variable ID="array" blockID="1141937666" value="" visible="true"/>
+<variable ID="1899008724:session" blockID="1899008724" value="OpenImadisSession" visible="false"/>
+<variable ID="1899008724:id" blockID="1899008724" value="" visible="false"/>
+<variable ID="869052016:image" blockID="869052016" value="Active Sequence" visible="false"/>
+<variable ID="869052016:channel" blockID="869052016" value="0" visible="false"/>
+<variable ID="869052016:dxy" blockID="869052016" value="64.5" visible="false"/>
+<variable ID="869052016:dz" blockID="869052016" value="128.0" visible="false"/>
+<variable ID="869052016:NA" blockID="869052016" value="1.4" visible="false"/>
+<variable ID="869052016:ni" blockID="869052016" value="1.518" visible="false"/>
+<variable ID="869052016:lambda" blockID="869052016" value="542.0" visible="false"/>
+<variable ID="869052016:deadPixel" blockID="869052016" value="Active Sequence" visible="false"/>
+<variable ID="869052016:gain" blockID="869052016" value="1.0" visible="false"/>
+<variable ID="869052016:noise" blockID="869052016" value="10.0" visible="false"/>
+<variable ID="869052016:mu" blockID="869052016" value="1.0E-5" visible="false"/>
+<variable ID="869052016:espilon" blockID="869052016" value="0.01" visible="false"/>
+<variable ID="869052016:Postivity" blockID="869052016" value="true" visible="false"/>
+<variable ID="869052016:nbIteration" blockID="869052016" value="10" visible="false"/>
+<variable ID="869052016:restart" blockID="869052016" value="Active Sequence" visible="false"/>
+<variable ID="869052016:radial" blockID="869052016" value="false" visible="false"/>
+<variable ID="869052016:nbAlphaCoef" blockID="869052016" value="7" visible="false"/>
+<variable ID="869052016:nbBetaCoef" blockID="869052016" value="0" visible="false"/>
+<variable ID="869052016:defocusMaxIter" blockID="869052016" value="20" visible="false"/>
+<variable ID="869052016:phaseMaxIter" blockID="869052016" value="20" visible="false"/>
+<variable ID="869052016:modulusMaxIter" blockID="869052016" value="0" visible="false"/>
+<variable ID="869052016:bDecTotalIteration" blockID="869052016" value="2" visible="false"/>
+<variable ID="1726182739:session" blockID="1726182739" value="OpenImadisSession" visible="false"/>
+<variable ID="1726182739:sequence" blockID="1726182739" value="Active Sequence" visible="false"/>
+<variable ID="1726182739:id reference" blockID="1726182739" value="" visible="false"/>
+<variable ID="1419972956:text" blockID="1419972956" value="PSF image from guid" visible="false"/>
+<variable ID="1767316448:input" blockID="1767316448" value="" visible="false"/>
+<variable ID="1767316448:Separator" blockID="1767316448" value=":" visible="false"/>
+<variable ID="1767316448:Suffix" blockID="1767316448" value="" visible="false"/>
+<variable ID="1059712602:session" blockID="1059712602" value="OpenImadisSession" visible="false"/>
+<variable ID="1059712602:sequence" blockID="1059712602" value="Active Sequence" visible="false"/>
+<variable ID="1059712602:id reference" blockID="1059712602" value="" visible="false"/>
+<variable ID="1709772280:session" blockID="1709772280" value="OpenImadisSession" visible="false"/>
+<variable ID="1709772280:id" blockID="1709772280" value="0" visible="false"/>
+<variable ID="1709772280:commentary" blockID="1709772280" value="" visible="false"/>
+<variable ID="1086980581:text" blockID="1086980581" value="deconvoluted image from guid" visible="false"/>
+<variable ID="720852508:input" blockID="720852508" value="" visible="false"/>
+<variable ID="720852508:Separator" blockID="720852508" value=":" visible="false"/>
+<variable ID="720852508:Suffix" blockID="720852508" value="" visible="false"/>
+<variable ID="411084689:session" blockID="411084689" value="OpenImadisSession" visible="false"/>
+<variable ID="411084689:id" blockID="411084689" value="0" visible="false"/>
+<variable ID="411084689:commentary" blockID="411084689" value="" visible="false"/>
+<variable ID="1995145858:session" blockID="1995145858" value="OpenImadisSession" visible="false"/>
+<variable ID="1995145858:id" blockID="1995145858" value="0" visible="true"/>
+<variable ID="1865298115:sequence" blockID="1865298115" value="Active Sequence" visible="false"/>
+<variable ID="298981375:sequence" blockID="298981375" value="Active Sequence" visible="false"/>
+<variable ID="661084572:array" blockID="661084572" value="" visible="false"/>
+<variable ID="661084572:index" blockID="661084572" value="0" visible="false"/>
+<variable ID="15694691:array" blockID="15694691" value="" visible="false"/>
+<variable ID="15694691:index" blockID="15694691" value="0" visible="false"/>
+<variable ID="1543991123:Operation" blockID="1543991123" value="SUBTRACT" visible="false"/>
+<variable ID="1543991123:In 1" blockID="1543991123" value="" visible="false"/>
+<variable ID="1543991123:In 2" blockID="1543991123" value="" visible="false"/>
+<variable ID="1651637400:array" blockID="1651637400" value="" visible="false"/>
+<variable ID="1651637400:index" blockID="1651637400" value="1" visible="false"/>
+<variable ID="1566554567:array" blockID="1566554567" value="" visible="false"/>
+<variable ID="1566554567:index" blockID="1566554567" value="2" visible="false"/>
+<variable ID="651884267:array" blockID="651884267" value="" visible="false"/>
+<variable ID="651884267:index" blockID="651884267" value="1" visible="false"/>
+<variable ID="772286296:Operation" blockID="772286296" value="SUBTRACT" visible="false"/>
+<variable ID="772286296:In 1" blockID="772286296" value="" visible="false"/>
+<variable ID="772286296:In 2" blockID="772286296" value="" visible="false"/>
+<variable ID="1415146747:array" blockID="1415146747" value="" visible="false"/>
+<variable ID="1415146747:index" blockID="1415146747" value="2" visible="false"/>
+<variable ID="1667927791:Operation" blockID="1667927791" value="SUBTRACT" visible="false"/>
+<variable ID="1667927791:In 1" blockID="1667927791" value="" visible="false"/>
+<variable ID="1667927791:In 2" blockID="1667927791" value="" visible="false"/>
+<variable ID="96428294:session" blockID="96428294" value="OpenImadisSession" visible="false"/>
+<variable ID="96428294:action" blockID="96428294" value="PUT" visible="false"/>
+<variable ID="96428294:id" blockID="96428294" value="0" visible="false"/>
+<variable ID="96428294:key" blockID="96428294" value="RES_X_DIF" visible="false"/>
+<variable ID="96428294:value" blockID="96428294" value="" visible="false"/>
+<variable ID="827874947:session" blockID="827874947" value="OpenImadisSession" visible="false"/>
+<variable ID="827874947:action" blockID="827874947" value="PUT" visible="false"/>
+<variable ID="827874947:id" blockID="827874947" value="0" visible="false"/>
+<variable ID="827874947:key" blockID="827874947" value="RES_Y_DIF" visible="false"/>
+<variable ID="827874947:value" blockID="827874947" value="" visible="false"/>
+<variable ID="55732032:session" blockID="55732032" value="OpenImadisSession" visible="false"/>
+<variable ID="55732032:action" blockID="55732032" value="PUT" visible="false"/>
+<variable ID="55732032:id" blockID="55732032" value="0" visible="false"/>
+<variable ID="55732032:key" blockID="55732032" value="RES_Z_DIF" visible="false"/>
+<variable ID="55732032:value" blockID="55732032" value="" visible="false"/>
+</input>
+<output>
+<variable ID="iteration" blockID="1141937666" visible="true"/>
+<variable ID="element" blockID="1141937666" visible="true"/>
+<variable ID="1899008724:sequence" blockID="1899008724" visible="false"/>
+<variable ID="869052016:outputSize" blockID="869052016" visible="false"/>
+<variable ID="869052016:outputImage" blockID="869052016" visible="false"/>
+<variable ID="869052016:outputPSF" blockID="869052016" visible="false"/>
+<variable ID="1726182739:id" blockID="1726182739" visible="false"/>
+<variable ID="1767316448:output" blockID="1767316448" visible="false"/>
+<variable ID="1059712602:id" blockID="1059712602" visible="false"/>
+<variable ID="720852508:output" blockID="720852508" visible="false"/>
+<variable ID="1995145858:sequence" blockID="1995145858" visible="false"/>
+<variable ID="1865298115:resolutions" blockID="1865298115" visible="false"/>
+<variable ID="1865298115:units" blockID="1865298115" visible="false"/>
+<variable ID="1865298115:XParams" blockID="1865298115" visible="false"/>
+<variable ID="1865298115:YParams" blockID="1865298115" visible="false"/>
+<variable ID="1865298115:ZParams" blockID="1865298115" visible="false"/>
+<variable ID="1865298115:xProfile" blockID="1865298115" visible="false"/>
+<variable ID="1865298115:yProfile" blockID="1865298115" visible="false"/>
+<variable ID="1865298115:zProfile" blockID="1865298115" visible="false"/>
+<variable ID="298981375:resolutions" blockID="298981375" visible="false"/>
+<variable ID="298981375:units" blockID="298981375" visible="false"/>
+<variable ID="298981375:XParams" blockID="298981375" visible="false"/>
+<variable ID="298981375:YParams" blockID="298981375" visible="false"/>
+<variable ID="298981375:ZParams" blockID="298981375" visible="false"/>
+<variable ID="298981375:xProfile" blockID="298981375" visible="false"/>
+<variable ID="298981375:yProfile" blockID="298981375" visible="false"/>
+<variable ID="298981375:zProfile" blockID="298981375" visible="false"/>
+<variable ID="661084572:element" blockID="661084572" visible="false"/>
+<variable ID="15694691:element" blockID="15694691" visible="false"/>
+<variable ID="1543991123:Out" blockID="1543991123" visible="false"/>
+<variable ID="1651637400:element" blockID="1651637400" visible="false"/>
+<variable ID="1566554567:element" blockID="1566554567" visible="false"/>
+<variable ID="651884267:element" blockID="651884267" visible="false"/>
+<variable ID="772286296:Out" blockID="772286296" visible="false"/>
+<variable ID="1415146747:element" blockID="1415146747" visible="false"/>
+<variable ID="1667927791:Out" blockID="1667927791" visible="false"/>
+<variable ID="96428294:value" blockID="96428294" visible="false"/>
+<variable ID="827874947:value" blockID="827874947" visible="false"/>
+<variable ID="55732032:value" blockID="55732032" visible="false"/>
+</output>
+</variables>
+</workflow>
+</blocks>
+<links>
+<link dstBlockID="1141937666" dstVarID="array" srcBlockID="234362534" srcVarID="integers"/>
+<link dstBlockID="582730026" dstVarID="url" srcBlockID="352705403" srcVarID="text"/>
+<link dstBlockID="582730026" dstVarID="access key" srcBlockID="1403338223" srcVarID="text"/>
+<link dstBlockID="1141937666" dstVarID="1995145858:id" srcBlockID="1296774300" srcVarID="integer"/>
+</links>
+</protocol>

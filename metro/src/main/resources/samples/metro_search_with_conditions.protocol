@@ -1,0 +1,134 @@
+<protocol VERSION="4">
+<blocks>
+<block ID="891139187" blockType="plugins.ofuica.metro.protocols.MetroLogin" className="plugins.ofuica.metro.protocols.MetroLogin" collapsed="false" definedName="Metro login" height="168" keepsResults="true" width="314" xLocation="42" yLocation="33">
+<variables>
+<input>
+<variable ID="service" name="service" runtime="false" value="OpenImadis" visible="true"/>
+<variable ID="url" name="url" runtime="false" value="192.168.99.100:8080" visible="true"/>
+<variable ID="access key" name="access key" runtime="false" value="eWn97rDTddqc7gDphf7tL6It07aSlKEtDCQYIpV3" visible="true"/>
+<variable ID="session name" name="session name" runtime="false" value="OpenImadis#1" visible="true"/>
+</input>
+<output>
+<variable ID="session" name="session" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1100293443" blockType="plugins.ofuica.metro.protocols.MetroSearch" className="plugins.ofuica.metro.protocols.MetroSearch" collapsed="false" definedName="Metro search" height="144" keepsResults="true" width="316" xLocation="43" yLocation="225">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="OpenImadis#1" visible="true"/>
+<variable ID="Add Condition" name="Add Condition" runtime="false" value="1" visible="true"/>
+<variable ID="Delete Condition" name="Delete Condition" runtime="false" value="0" visible="true"/>
+<variable ID="condition #1" name="condition #1" runtime="false" value="MICROSCOPE ABCD" visible="true"/>
+</input>
+<output>
+<variable ID="guids" name="guids" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<workflow ID="1115839482" blockType="plugins.adufour.blocks.lang.Batch" className="plugins.adufour.blocks.lang.Batch" collapsed="false" definedName="Batch" height="475" keepsResults="true" width="582" xLocation="413" yLocation="69">
+<blocks>
+<block ID="1197767247" blockType="plugins.ofuica.metro.protocols.MetroAnnotate" className="plugins.ofuica.metro.protocols.MetroAnnotate" collapsed="false" definedName="Metro annotate" height="175" keepsResults="true" width="198" xLocation="105" yLocation="34">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="OpenImadis#1" visible="true"/>
+<variable ID="action" name="action" runtime="false" value="GET" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="key" name="key" runtime="false" value="DATE_QUALITY" visible="true"/>
+<variable ID="value" name="value" runtime="false" type="java.lang.Object" value="" visible="true"/>
+</input>
+<output>
+<variable ID="value" name="value" runtime="false" type="java.lang.Object" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1233916012" blockType="plugins.ofuica.metro.protocols.MetroAnnotate" className="plugins.ofuica.metro.protocols.MetroAnnotate" collapsed="false" definedName="Metro annotate" height="175" keepsResults="true" width="198" xLocation="106" yLocation="220">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="OpenImadis#1" visible="true"/>
+<variable ID="action" name="action" runtime="false" value="GET" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="key" name="key" runtime="false" value="VALUE_QUALITY" visible="true"/>
+<variable ID="value" name="value" runtime="false" type="java.lang.Object" value="" visible="true"/>
+</input>
+<output>
+<variable ID="value" name="value" runtime="false" type="java.lang.Object" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1110991758" blockType="plugins.ofuica.metro.protocols.ListAppend" className="plugins.ofuica.metro.protocols.ListAppend" collapsed="false" definedName="List append" height="107" keepsResults="true" width="176" xLocation="340" yLocation="73">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="OpenImadis#1" visible="true"/>
+<variable ID="element" name="element" runtime="false" type="java.lang.Object" visible="true"/>
+</input>
+<output>
+<variable ID="array" name="array" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="88532151" blockType="plugins.ofuica.metro.protocols.ListAppend" className="plugins.ofuica.metro.protocols.ListAppend" collapsed="false" definedName="List append" height="94" keepsResults="true" width="176" xLocation="340" yLocation="259">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="OpenImadis#1" visible="true"/>
+<variable ID="element" name="element" runtime="false" type="java.lang.Object" visible="true"/>
+</input>
+<output>
+<variable ID="array" name="array" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+</blocks>
+<links>
+<link dstBlockID="1197767247" dstVarID="id" srcBlockID="1115839482" srcVarID="element" srcVarType="long"/>
+<link dstBlockID="1233916012" dstVarID="id" srcBlockID="1197767247" srcVarID="id"/>
+<link dstBlockID="1110991758" dstVarID="element" srcBlockID="1197767247" srcVarID="value" srcVarType="java.lang.Object"/>
+<link dstBlockID="88532151" dstVarID="element" srcBlockID="1233916012" srcVarID="value" srcVarType="java.lang.Object"/>
+</links>
+<variables>
+<input>
+<variable ID="array" blockID="1115839482" value="" visible="true"/>
+<variable ID="1197767247:session" blockID="1197767247" value="OpenImadis#1" visible="false"/>
+<variable ID="1197767247:action" blockID="1197767247" value="GET" visible="false"/>
+<variable ID="1197767247:id" blockID="1197767247" value="" visible="false"/>
+<variable ID="1197767247:key" blockID="1197767247" value="DATE_QUALITY" visible="false"/>
+<variable ID="1197767247:value" blockID="1197767247" value="" visible="false"/>
+<variable ID="1233916012:session" blockID="1233916012" value="OpenImadis#1" visible="false"/>
+<variable ID="1233916012:action" blockID="1233916012" value="GET" visible="false"/>
+<variable ID="1233916012:id" blockID="1233916012" value="" visible="false"/>
+<variable ID="1233916012:key" blockID="1233916012" value="VALUE_QUALITY" visible="false"/>
+<variable ID="1233916012:value" blockID="1233916012" value="" visible="false"/>
+<variable ID="1110991758:session" blockID="1110991758" value="OpenImadis#1" visible="false"/>
+<variable ID="1110991758:element" blockID="1110991758" value="" visible="false"/>
+<variable ID="88532151:session" blockID="88532151" value="OpenImadis#1" visible="false"/>
+<variable ID="88532151:element" blockID="88532151" value="" visible="false"/>
+</input>
+<output>
+<variable ID="iteration" blockID="1115839482" visible="true"/>
+<variable ID="element" blockID="1115839482" visible="true"/>
+<variable ID="1197767247:value" blockID="1197767247" visible="false"/>
+<variable ID="1233916012:value" blockID="1233916012" visible="false"/>
+<variable ID="1110991758:array" blockID="1110991758" visible="true"/>
+<variable ID="88532151:array" blockID="88532151" visible="true"/>
+</output>
+</variables>
+</workflow>
+<block ID="189058521" blockType="plugins.ofuica.metro.protocols.MetroTimeChart" className="plugins.ofuica.metro.protocols.MetroTimeChart" collapsed="false" definedName="Metro time chart" height="451" keepsResults="true" width="682" xLocation="1022" yLocation="101">
+<variables>
+<input>
+<variable ID="time" name="time" runtime="false" visible="true"/>
+<variable ID="value" name="value" runtime="false" visible="true"/>
+<variable ID="chart" name="chart" runtime="false" value="[[Ljava.lang.Object;@439661c2" visible="true"/>
+</input>
+<output>
+<variable ID="figure" name="figure" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+</blocks>
+<links>
+<link dstBlockID="1115839482" dstVarID="array" srcBlockID="1100293443" srcVarID="guids"/>
+<link dstBlockID="189058521" dstVarID="time" srcBlockID="1115839482" srcVarID="1110991758:array"/>
+<link dstBlockID="189058521" dstVarID="value" srcBlockID="1115839482" srcVarID="88532151:array"/>
+</links>
+</protocol>

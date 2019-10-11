@@ -1,0 +1,88 @@
+<protocol VERSION="4">
+<blocks>
+<block ID="28105227" blockType="plugins.ofuica.metro.protocols.MetroLogin" className="plugins.ofuica.metro.protocols.MetroLogin" collapsed="false" definedName="Metro login" height="193" keepsResults="true" width="290" xLocation="100" yLocation="250">
+<variables>
+<input>
+<variable ID="service" name="service" runtime="false" value="Omero" visible="true"/>
+<variable ID="url" name="url" runtime="false" value="demo.openmicroscopy.org:4064" visible="true"/>
+<variable ID="session name" name="session name" runtime="false" value="Omero Session" visible="true"/>
+<variable ID="user" name="user" runtime="false" value="ofuica" visible="true"/>
+<variable ID="password" name="password" runtime="false" value="tremendous trumpet" visible="true"/>
+</input>
+<output>
+<variable ID="session" name="session" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="2033774169" blockType="plugins.ofuica.metro.protocols.MetroLogin" className="plugins.ofuica.metro.protocols.MetroLogin" collapsed="false" definedName="Metro login" height="166" keepsResults="true" width="283" xLocation="103" yLocation="65">
+<variables>
+<input>
+<variable ID="service" name="service" runtime="false" value="OpenImadis" visible="true"/>
+<variable ID="url" name="url" runtime="false" value="192.168.99.100:8080" visible="true"/>
+<variable ID="access key" name="access key" runtime="false" value="QgmqnLUKXx8YqsbhcJ8ePaGpg1FNJePLQTMf1MJ3" visible="true"/>
+<variable ID="session name" name="session name" runtime="false" value="OpenImadis Session" visible="true"/>
+</input>
+<output>
+<variable ID="session" name="session" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="432241788" blockType="plugins.ofuica.metro.protocols.MetroGetSequence" className="plugins.ofuica.metro.protocols.MetroGetSequence" collapsed="false" definedName="Metro get sequence" height="107" keepsResults="true" width="225" xLocation="457" yLocation="29">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="OpenImadis Session" visible="true"/>
+<variable ID="id" name="id" runtime="false" value="23" visible="true"/>
+</input>
+<output>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1898596516" blockType="plugins.ofuica.metro.protocols.MetroUpload" className="plugins.ofuica.metro.protocols.MetroUpload" collapsed="false" definedName="Metro upload" height="153" keepsResults="true" width="286" xLocation="447" yLocation="189">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="Omero Session" visible="true"/>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+<variable ID="id ref project/dataset" name="id ref project/dataset" runtime="false" value="true" visible="true"/>
+<variable ID="id reference" name="id reference" runtime="false" value="5772" visible="true"/>
+</input>
+<output>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="897998308" blockType="plugins.adufour.blocks.tools.Display" className="plugins.adufour.blocks.tools.Display" collapsed="false" definedName="Display" height="193" keepsResults="true" width="171" xLocation="757" yLocation="9">
+<variables>
+<input>
+<variable ID="object" name="object" runtime="false" type="icy.sequence.Sequence" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="442103658" blockType="plugins.ofuica.metro.protocols.MetroGetSequence" className="plugins.ofuica.metro.protocols.MetroGetSequence" collapsed="false" definedName="Metro get sequence" height="117" keepsResults="true" width="252" xLocation="459" yLocation="396">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="Omero Session" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+</input>
+<output>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="478835630" blockType="plugins.adufour.blocks.tools.Display" className="plugins.adufour.blocks.tools.Display" collapsed="false" definedName="Display" height="158" keepsResults="true" width="174" xLocation="755" yLocation="399">
+<variables>
+<input>
+<variable ID="object" name="object" runtime="false" type="icy.sequence.Sequence" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+</blocks>
+<links>
+<link dstBlockID="1898596516" dstVarID="sequence" srcBlockID="432241788" srcVarID="sequence"/>
+<link dstBlockID="897998308" dstVarID="object" srcBlockID="432241788" srcVarID="sequence"/>
+<link dstBlockID="442103658" dstVarID="id" srcBlockID="1898596516" srcVarID="id"/>
+<link dstBlockID="478835630" dstVarID="object" srcBlockID="442103658" srcVarID="sequence"/>
+</links>
+</protocol>

@@ -1,0 +1,23 @@
+{
+   "categoryName":"Demo",
+   "clientID":"EkLOTQUvPxzG63KFwUVSl5uvn9qDN5MLuUri3LZv",
+   "description":"Launch an Icy's Protocol",
+   "name":"IcyProtocol",
+   "parameters":[
+      {
+         "name": "host",
+         "type": "STRING",
+         "defaultValue": "192.168.99.100:8080",
+         "__hashCodeCalc":false
+      },
+      
+      {
+         "name":"protocol",
+         "type":"STRING",
+         "defaultValue":"./blind_deconvolution.protocol",
+         "__hashCodeCalc":false
+      },
+   ],
+   "version":"1.0",
+   "__hashCodeCalc":false
+}

@@ -1,0 +1,263 @@
+<protocol VERSION="4">
+<blocks>
+<block ID="15092755" blockType="plugins.adufour.blocks.tools.input.Integers" className="plugins.adufour.blocks.tools.input.Integers" collapsed="false" definedName="Integers" height="63" keepsResults="true" width="154" xLocation="11" yLocation="13">
+<variables>
+<input>
+<variable ID="integers" name="integers" runtime="false" value="11866" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<workflow ID="507943335" blockType="plugins.ofuica.metro.protocols.MetroBatch" className="plugins.ofuica.metro.protocols.MetroBatch" collapsed="false" definedName="Metro batch" height="813" keepsResults="true" width="1198" xLocation="181" yLocation="15">
+<blocks>
+<block ID="1575607245" blockType="plugins.tprovoost.sequenceblocks.convert.Resize" className="plugins.tprovoost.sequenceblocks.SequenceBlocks" collapsed="false" definedName="Resize" height="202" keepsResults="true" width="254" xLocation="243" yLocation="5">
+<variables>
+<input>
+<variable ID="Sequence" name="Sequence" runtime="false" visible="true"/>
+<variable ID="Width" name="Width" runtime="false" value="320" visible="true"/>
+<variable ID="Height" name="Height" runtime="false" value="200" visible="true"/>
+<variable ID="Proportional" name="Proportional" runtime="false" value="TO_WIDTH" visible="true"/>
+<variable ID="Filter" name="Filter" runtime="false" value="NEAREST" visible="true"/>
+<variable ID="Scale content" name="Scale content" runtime="false" value="true" visible="true"/>
+</input>
+<output>
+<variable ID="Out" name="Out" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="682859432" blockType="plugins.mitiv.blinddeconv.MitivBlindDeconvolution" className="plugins.mitiv.deconv.MitivDeconvolution" collapsed="false" definedName="Mitiv blind deconvolution" height="623" keepsResults="true" width="361" xLocation="17" yLocation="225">
+<variables>
+<input>
+<variable ID="image" name="Sequence:" runtime="false" visible="true"/>
+<variable ID="channel" name="Canal:" runtime="false" value="0" visible="true"/>
+<variable ID="dxy" name="dxy(nm):" runtime="false" value="61.49049312272195" visible="true"/>
+<variable ID="dz" name="dz(nm):" runtime="false" value="99.99999999999994" visible="true"/>
+<variable ID="NA" name="NA:" runtime="false" value="1.4" visible="true"/>
+<variable ID="ni" name="ni:" runtime="false" value="1.518" visible="true"/>
+<variable ID="lambda" name="λ(nm):" runtime="false" value="542.0" visible="true"/>
+<variable ID="deadPixel" name="Bad data map:" runtime="false" value="Active Sequence" visible="true"/>
+<variable ID="gain" name="Gain:" runtime="false" value="1.0" visible="true"/>
+<variable ID="noise" name="Readout Noise:" runtime="false" value="10.0" visible="true"/>
+<variable ID="mu" name="Regularization level:" runtime="false" value="1.0E-5" visible="true"/>
+<variable ID="espilon" name="Threshold level:" runtime="false" value="0.01" visible="true"/>
+<variable ID="Postivity" name="Enforce nonnegativity:" runtime="false" value="true" visible="true"/>
+<variable ID="nbIteration" name="Number of iterations: " runtime="false" value="10" visible="true"/>
+<variable ID="restart" name="Starting point:" runtime="false" value="Active Sequence" visible="true"/>
+<variable ID="radial" name="Radially symmetric PSF" runtime="false" value="true" visible="true"/>
+<variable ID="nbAlphaCoef" name="Number of phase coefs Nα:" runtime="false" value="7" visible="true"/>
+<variable ID="nbBetaCoef" name="Number of modulus coefs Nβ:" runtime="false" value="0" visible="true"/>
+<variable ID="defocusMaxIter" name="Max. nb. of iterations for defocus:" runtime="false" value="20" visible="true"/>
+<variable ID="phaseMaxIter" name="Max. nb. of iterations for phase:" runtime="false" value="20" visible="true"/>
+<variable ID="modulusMaxIter" name="Max. nb. of iterations for modulus:" runtime="false" value="0" visible="true"/>
+<variable ID="bDecTotalIteration" name="Number of loops:" runtime="false" value="2" visible="true"/>
+</input>
+<output>
+<variable ID="outputSize" name="Output size:" runtime="false" visible="true"/>
+<variable ID="outputImage" name="Output Image" runtime="false" visible="true"/>
+<variable ID="outputPSF" name="Output PSF" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="331941854" blockType="plugins.adufour.blocks.tools.Display" className="plugins.adufour.blocks.tools.Display" collapsed="false" definedName="Display" height="159" keepsResults="true" width="168" xLocation="522" yLocation="351">
+<variables>
+<input>
+<variable ID="object" name="object" runtime="false" type="icy.sequence.Sequence" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="1151488946" blockType="plugins.adufour.blocks.tools.Display" className="plugins.adufour.blocks.tools.Display" collapsed="false" definedName="Display" height="182" keepsResults="true" width="168" xLocation="522" yLocation="516">
+<variables>
+<input>
+<variable ID="object" name="object" runtime="false" type="icy.sequence.Sequence" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="680728061" blockType="plugins.ofuica.metro.protocols.PSFProfiler" className="plugins.ofuica.metro.protocols.PSFProfiler" collapsed="false" definedName="PSF profiler" height="237" keepsResults="true" width="229" xLocation="712" yLocation="501">
+<variables>
+<input>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+</input>
+<output>
+<variable ID="resolutions" name="resolutions" runtime="false" visible="true"/>
+<variable ID="units" name="units" runtime="false" visible="true"/>
+<variable ID="XParams" name="XParams" runtime="false" visible="true"/>
+<variable ID="YParams" name="YParams" runtime="false" visible="true"/>
+<variable ID="ZParams" name="ZParams" runtime="false" visible="true"/>
+<variable ID="xProfile" name="xProfile" runtime="false" visible="true"/>
+<variable ID="yProfile" name="yProfile" runtime="false" visible="true"/>
+<variable ID="zProfile" name="zProfile" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="294401611" blockType="plugins.adufour.blocks.tools.Display" className="plugins.adufour.blocks.tools.Display" collapsed="false" definedName="Display" height="176" keepsResults="true" width="171" xLocation="523" yLocation="2">
+<variables>
+<input>
+<variable ID="object" name="object" runtime="false" type="icy.sequence.Sequence" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="364952932" blockType="plugins.adufour.blocks.tools.Display" className="plugins.adufour.blocks.tools.Display" collapsed="false" definedName="Display" height="153" keepsResults="true" width="173" xLocation="519" yLocation="190">
+<variables>
+<input>
+<variable ID="object" name="object" runtime="false" type="icy.sequence.Sequence" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="126262231" blockType="plugins.adufour.blocks.tools.Display" className="plugins.adufour.blocks.tools.Display" collapsed="false" definedName="Display" height="59" keepsResults="true" width="150" xLocation="1020" yLocation="426">
+<variables>
+<input>
+<variable ID="object" name="object" runtime="false" type="java.lang.String" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="1317127491" blockType="plugins.adufour.blocks.tools.Display" className="plugins.adufour.blocks.tools.Display" collapsed="false" definedName="Display" height="157" keepsResults="true" width="150" xLocation="1021" yLocation="491">
+<variables>
+<input>
+<variable ID="object" name="object" runtime="false" type="icy.sequence.Sequence" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="1866050468" blockType="plugins.adufour.blocks.tools.Display" className="plugins.adufour.blocks.tools.Display" collapsed="false" definedName="Display" height="158" keepsResults="true" width="150" xLocation="1021" yLocation="644">
+<variables>
+<input>
+<variable ID="object" name="object" runtime="false" type="icy.sequence.Sequence" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="1737475789" blockType="plugins.adufour.blocks.tools.Display" className="plugins.adufour.blocks.tools.Display" collapsed="false" definedName="Display" height="161" keepsResults="true" width="150" xLocation="1022" yLocation="799">
+<variables>
+<input>
+<variable ID="object" name="object" runtime="false" type="icy.sequence.Sequence" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="1262865711" blockType="plugins.adufour.blocks.tools.Display" className="plugins.adufour.blocks.tools.Display" collapsed="false" definedName="Display" height="57" keepsResults="true" width="150" xLocation="1018" yLocation="365">
+<variables>
+<input>
+<variable ID="object" name="object" runtime="false" type="[D" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="273389557" blockType="plugins.adufour.blocks.tools.Display" className="plugins.adufour.blocks.tools.Display" collapsed="false" definedName="Display" height="56" keepsResults="true" width="290" xLocation="694" yLocation="771">
+<variables>
+<input>
+<variable ID="object" name="object" runtime="false" type="java.lang.String" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="559412889" blockType="plugins.adufour.blocks.tools.Display" className="plugins.adufour.blocks.tools.Display" collapsed="false" definedName="Display" height="55" keepsResults="true" width="302" xLocation="693" yLocation="829">
+<variables>
+<input>
+<variable ID="object" name="object" runtime="false" type="java.lang.String" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+<block ID="303872499" blockType="plugins.adufour.blocks.tools.Display" className="plugins.adufour.blocks.tools.Display" collapsed="false" definedName="Display" height="53" keepsResults="true" width="301" xLocation="694" yLocation="883">
+<variables>
+<input>
+<variable ID="object" name="object" runtime="false" type="java.lang.String" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+</blocks>
+<links>
+<link dstBlockID="1575607245" dstVarID="Sequence" srcBlockID="507943335" srcVarID="sequence"/>
+<link dstBlockID="682859432" dstVarID="image" srcBlockID="1575607245" srcVarID="Out"/>
+<link dstBlockID="294401611" dstVarID="object" srcBlockID="1575607245" srcVarID="Sequence"/>
+<link dstBlockID="364952932" dstVarID="object" srcBlockID="1575607245" srcVarID="Out"/>
+<link dstBlockID="1151488946" dstVarID="object" srcBlockID="682859432" srcVarID="outputPSF"/>
+<link dstBlockID="331941854" dstVarID="object" srcBlockID="682859432" srcVarID="outputImage"/>
+<link dstBlockID="680728061" dstVarID="sequence" srcBlockID="1151488946" srcVarID="object" srcVarType="icy.sequence.Sequence"/>
+<link dstBlockID="1317127491" dstVarID="object" srcBlockID="680728061" srcVarID="xProfile"/>
+<link dstBlockID="1866050468" dstVarID="object" srcBlockID="680728061" srcVarID="yProfile"/>
+<link dstBlockID="1737475789" dstVarID="object" srcBlockID="680728061" srcVarID="zProfile"/>
+<link dstBlockID="1262865711" dstVarID="object" srcBlockID="680728061" srcVarID="resolutions"/>
+<link dstBlockID="273389557" dstVarID="object" srcBlockID="680728061" srcVarID="XParams"/>
+<link dstBlockID="559412889" dstVarID="object" srcBlockID="680728061" srcVarID="YParams"/>
+<link dstBlockID="303872499" dstVarID="object" srcBlockID="680728061" srcVarID="ZParams"/>
+<link dstBlockID="126262231" dstVarID="object" srcBlockID="680728061" srcVarID="units"/>
+</links>
+<variables>
+<input>
+<variable ID="array" blockID="507943335" value="" visible="true"/>
+<variable ID="host" blockID="507943335" value="cid.curie.fr:443" visible="true"/>
+<variable ID="code" blockID="507943335" value="auxJGBeKNIAJoGYr5pNtwRnI5jkXUyxUhDrhtpkf" visible="true"/>
+<variable ID="1575607245:Sequence" blockID="1575607245" value="Active Sequence" visible="false"/>
+<variable ID="1575607245:Width" blockID="1575607245" value="320" visible="false"/>
+<variable ID="1575607245:Height" blockID="1575607245" value="200" visible="false"/>
+<variable ID="1575607245:Proportional" blockID="1575607245" value="TO_WIDTH" visible="false"/>
+<variable ID="1575607245:Filter" blockID="1575607245" value="NEAREST" visible="false"/>
+<variable ID="1575607245:Scale content" blockID="1575607245" value="true" visible="false"/>
+<variable ID="682859432:image" blockID="682859432" visible="false"/>
+<variable ID="682859432:channel" blockID="682859432" value="0" visible="false"/>
+<variable ID="682859432:dxy" blockID="682859432" value="61.49049312272195" visible="false"/>
+<variable ID="682859432:dz" blockID="682859432" value="99.99999999999994" visible="false"/>
+<variable ID="682859432:NA" blockID="682859432" value="1.4" visible="false"/>
+<variable ID="682859432:ni" blockID="682859432" value="1.518" visible="false"/>
+<variable ID="682859432:lambda" blockID="682859432" value="542.0" visible="false"/>
+<variable ID="682859432:deadPixel" blockID="682859432" value="Active Sequence" visible="false"/>
+<variable ID="682859432:gain" blockID="682859432" value="1.0" visible="false"/>
+<variable ID="682859432:noise" blockID="682859432" value="10.0" visible="false"/>
+<variable ID="682859432:mu" blockID="682859432" value="1.0E-5" visible="false"/>
+<variable ID="682859432:espilon" blockID="682859432" value="0.01" visible="false"/>
+<variable ID="682859432:Postivity" blockID="682859432" value="true" visible="false"/>
+<variable ID="682859432:nbIteration" blockID="682859432" value="10" visible="false"/>
+<variable ID="682859432:restart" blockID="682859432" value="Active Sequence" visible="false"/>
+<variable ID="682859432:radial" blockID="682859432" value="true" visible="false"/>
+<variable ID="682859432:nbAlphaCoef" blockID="682859432" value="7" visible="false"/>
+<variable ID="682859432:nbBetaCoef" blockID="682859432" value="0" visible="false"/>
+<variable ID="682859432:defocusMaxIter" blockID="682859432" value="20" visible="false"/>
+<variable ID="682859432:phaseMaxIter" blockID="682859432" value="20" visible="false"/>
+<variable ID="682859432:modulusMaxIter" blockID="682859432" value="0" visible="false"/>
+<variable ID="682859432:bDecTotalIteration" blockID="682859432" value="2" visible="false"/>
+<variable ID="331941854:object" blockID="331941854" value="" visible="false"/>
+<variable ID="1151488946:object" blockID="1151488946" value="" visible="false"/>
+<variable ID="680728061:sequence" blockID="680728061" visible="false"/>
+<variable ID="294401611:object" blockID="294401611" value="" visible="false"/>
+<variable ID="364952932:object" blockID="364952932" value="" visible="false"/>
+<variable ID="126262231:object" blockID="126262231" value="" visible="false"/>
+<variable ID="1317127491:object" blockID="1317127491" value="" visible="false"/>
+<variable ID="1866050468:object" blockID="1866050468" value="" visible="false"/>
+<variable ID="1737475789:object" blockID="1737475789" value="" visible="false"/>
+<variable ID="1262865711:object" blockID="1262865711" value="" visible="false"/>
+<variable ID="273389557:object" blockID="273389557" value="" visible="false"/>
+<variable ID="559412889:object" blockID="559412889" value="" visible="false"/>
+<variable ID="303872499:object" blockID="303872499" value="" visible="false"/>
+</input>
+<output>
+<variable ID="iteration" blockID="507943335" visible="true"/>
+<variable ID="element" blockID="507943335" visible="true"/>
+<variable ID="sequence" blockID="507943335" visible="true"/>
+<variable ID="id" blockID="507943335" visible="true"/>
+<variable ID="1575607245:Out" blockID="1575607245" visible="false"/>
+<variable ID="682859432:outputSize" blockID="682859432" visible="false"/>
+<variable ID="682859432:outputImage" blockID="682859432" visible="false"/>
+<variable ID="682859432:outputPSF" blockID="682859432" visible="false"/>
+<variable ID="680728061:resolutions" blockID="680728061" visible="false"/>
+<variable ID="680728061:units" blockID="680728061" visible="false"/>
+<variable ID="680728061:XParams" blockID="680728061" visible="false"/>
+<variable ID="680728061:YParams" blockID="680728061" visible="false"/>
+<variable ID="680728061:ZParams" blockID="680728061" visible="false"/>
+<variable ID="680728061:xProfile" blockID="680728061" visible="false"/>
+<variable ID="680728061:yProfile" blockID="680728061" visible="false"/>
+<variable ID="680728061:zProfile" blockID="680728061" visible="false"/>
+</output>
+</variables>
+</workflow>
+</blocks>
+<links>
+<link dstBlockID="507943335" dstVarID="array" srcBlockID="15092755" srcVarID="integers"/>
+</links>
+</protocol>

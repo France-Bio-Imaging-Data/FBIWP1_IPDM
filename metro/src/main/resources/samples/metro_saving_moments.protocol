@@ -1,0 +1,102 @@
+<protocol VERSION="4">
+<blocks>
+<block ID="234549992" blockType="plugins.ofuica.metro.protocols.MetroLogin" className="plugins.ofuica.metro.protocols.MetroLogin" collapsed="false" definedName="Metro login" height="155" keepsResults="true" width="219" xLocation="16" yLocation="24">
+<variables>
+<input>
+<variable ID="service" name="service" runtime="false" value="OpenImadis" visible="true"/>
+<variable ID="url" name="url" runtime="false" value="cid.curie.fr:443" visible="true"/>
+<variable ID="access key" name="access key" runtime="false" value="" visible="true"/>
+<variable ID="session name" name="session name" runtime="false" value="OpenImadis" visible="true"/>
+</input>
+<output>
+<variable ID="session" name="session" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="353369995" blockType="plugins.ofuica.metro.protocols.MetroSearch" className="plugins.ofuica.metro.protocols.MetroSearch" collapsed="false" definedName="Metro search" height="149" keepsResults="true" width="220" xLocation="17" yLocation="192">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" visible="true"/>
+<variable ID="Add Condition" name="Add Condition" runtime="false" value="1" visible="true"/>
+<variable ID="Delete Condition" name="Delete Condition" runtime="false" value="0" visible="true"/>
+<variable ID="condition #1" name="condition #1" runtime="false" value="PSF TRUE" visible="true"/>
+</input>
+<output>
+<variable ID="guids" name="guids" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<workflow ID="215644565" blockType="plugins.adufour.blocks.lang.Batch" className="plugins.adufour.blocks.lang.Batch" collapsed="false" definedName="Batch" height="369" keepsResults="true" width="704" xLocation="293" yLocation="23">
+<blocks>
+<block ID="289495135" blockType="plugins.ofuica.metro.protocols.MetroGetSequence" className="plugins.ofuica.metro.protocols.MetroGetSequence" collapsed="false" definedName="Metro get sequence" height="107" keepsResults="true" width="225" xLocation="101" yLocation="34">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="OpenImadis" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+</input>
+<output>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="2001645695" blockType="plugins.ofuica.psfmoments.PSFMoments" className="plugins.ofuica.psfmoments.PSFMoments" collapsed="false" definedName="PSF Moments" height="155" keepsResults="true" width="223" xLocation="101" yLocation="156">
+<variables>
+<input>
+<variable ID="sequence" name="sequence" runtime="false" visible="true"/>
+<variable ID="channel" name="channel" runtime="false" value="0" visible="true"/>
+<variable ID="clipping" name="clipping" runtime="false" value="true" visible="true"/>
+<variable ID="normalize" name="normalize" runtime="false" value="true" visible="true"/>
+</input>
+<output>
+<variable ID="Workbook" name="Workbook" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="213012514" blockType="plugins.ofuica.metro.protocols.MetroAttach" className="plugins.ofuica.metro.protocols.MetroAttach" collapsed="false" definedName="Metro attach" height="198" keepsResults="true" width="262" xLocation="366" yLocation="111">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="OpenImadis" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="object" name="object" runtime="false" type="org.apache.poi.ss.usermodel.Workbook" visible="true"/>
+<variable ID="name" name="name" runtime="false" value="moments" visible="true"/>
+<variable ID="notes" name="notes" runtime="false" value="generated moments" visible="true"/>
+</input>
+<output/>
+</variables>
+</block>
+</blocks>
+<links>
+<link dstBlockID="289495135" dstVarID="id" srcBlockID="215644565" srcVarID="element" srcVarType="long"/>
+<link dstBlockID="2001645695" dstVarID="sequence" srcBlockID="289495135" srcVarID="sequence"/>
+<link dstBlockID="213012514" dstVarID="id" srcBlockID="289495135" srcVarID="id"/>
+<link dstBlockID="213012514" dstVarID="object" srcBlockID="2001645695" srcVarID="Workbook"/>
+</links>
+<variables>
+<input>
+<variable ID="array" blockID="215644565" value="" visible="true"/>
+<variable ID="289495135:session" blockID="289495135" value="OpenImadis" visible="false"/>
+<variable ID="289495135:id" blockID="289495135" value="" visible="false"/>
+<variable ID="2001645695:sequence" blockID="2001645695" value="Active Sequence" visible="false"/>
+<variable ID="2001645695:channel" blockID="2001645695" value="0" visible="false"/>
+<variable ID="2001645695:clipping" blockID="2001645695" value="true" visible="false"/>
+<variable ID="2001645695:normalize" blockID="2001645695" value="true" visible="false"/>
+<variable ID="213012514:session" blockID="213012514" value="OpenImadis" visible="false"/>
+<variable ID="213012514:id" blockID="213012514" value="" visible="false"/>
+<variable ID="213012514:object" blockID="213012514" value="" visible="false"/>
+<variable ID="213012514:name" blockID="213012514" value="moments" visible="false"/>
+<variable ID="213012514:notes" blockID="213012514" value="generated moments" visible="false"/>
+</input>
+<output>
+<variable ID="iteration" blockID="215644565" visible="true"/>
+<variable ID="element" blockID="215644565" visible="true"/>
+<variable ID="289495135:sequence" blockID="289495135" visible="false"/>
+<variable ID="2001645695:Workbook" blockID="2001645695" visible="false"/>
+</output>
+</variables>
+</workflow>
+</blocks>
+<links>
+<link dstBlockID="353369995" dstVarID="session" srcBlockID="234549992" srcVarID="session"/>
+<link dstBlockID="215644565" dstVarID="array" srcBlockID="353369995" srcVarID="guids"/>
+</links>
+</protocol>

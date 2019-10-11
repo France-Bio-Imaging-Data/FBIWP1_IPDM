@@ -1,0 +1,144 @@
+<protocol VERSION="4">
+<blocks>
+<block ID="1174484605" blockType="plugins.ofuica.metro.protocols.MetroLogin" className="plugins.ofuica.metro.protocols.MetroLogin" collapsed="false" definedName="Metro login" height="209" keepsResults="true" width="300" xLocation="0" yLocation="75">
+<variables>
+<input>
+<variable ID="service" name="service" runtime="false" value="Omero" visible="true"/>
+<variable ID="url" name="url" runtime="false" value="demo.openmicroscopy.org:4064" visible="true"/>
+<variable ID="session name" name="session name" runtime="false" value="OmeroSession" visible="true"/>
+<variable ID="user" name="user" runtime="false" value="ofuica" visible="true"/>
+<variable ID="password" name="password" runtime="false" value="tremendous trumpet" visible="true"/>
+</input>
+<output>
+<variable ID="session" name="session" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<workflow ID="182294" blockType="plugins.ofuica.metro.protocols.MetroTilesLoop" className="plugins.ofuica.metro.protocols.MetroTilesLoop" collapsed="false" definedName="Metro tiles loop" height="769" keepsResults="true" width="1031" xLocation="319" yLocation="77">
+<blocks>
+<block ID="1186285956" blockType="plugins.tprovoost.sequenceblocks.extract.ExtractChannel" className="plugins.tprovoost.sequenceblocks.SequenceBlocks" collapsed="false" definedName="Extract channel" height="107" keepsResults="true" width="216" xLocation="274" yLocation="126">
+<variables>
+<input>
+<variable ID="sequence" name="Sequence" runtime="false" visible="true"/>
+<variable ID="channel" name="Channel" runtime="false" value="0" visible="true"/>
+</input>
+<output>
+<variable ID="extracted" name="Extracted" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="1284539334" blockType="plugins.fab.waveletspotdetectorblock.WaveletSpotDetectorBlock" className="plugins.fab.waveletspotdetectorblock.WaveletSpotDetectorBlock" collapsed="false" definedName="Wavelet Spot Detector Block" height="459" keepsResults="true" width="337" xLocation="267" yLocation="248">
+<variables>
+<input>
+<variable ID="input Sequence" name="input Sequence" runtime="false" visible="true"/>
+<variable ID="Spot to detect" name="Spot to detect" runtime="false" value="BRIGHT_SPOT" visible="true"/>
+<variable ID="input Sequence ROIs" name="ROIs from sequence for WAT" runtime="false" visible="true"/>
+<variable ID="Compute WAT considering ROI" name="Compute WAT considering ROI" runtime="false" value="true" visible="true"/>
+<variable ID="ROIs for detection mask" name="ROIs for detection mask" runtime="false" value="No ROI" visible="true"/>
+<variable ID="Scale 1" name="Scale 1" runtime="false" value="false" visible="true"/>
+<variable ID="Scale 2" name="Scale 2" runtime="false" value="true" visible="true"/>
+<variable ID="Scale 3" name="Scale 3" runtime="false" value="false" visible="true"/>
+<variable ID="Scale 4" name="Scale 4" runtime="false" value="false" visible="true"/>
+<variable ID="Scale 5" name="Scale 5" runtime="false" value="false" visible="true"/>
+<variable ID="Th. scale 1:" name="Th. scale 1:" runtime="false" value="100" visible="false"/>
+<variable ID="Th. scale 2:" name="Th. scale 2:" runtime="false" value="100" visible="false"/>
+<variable ID="Th. scale 3:" name="Th. scale 3:" runtime="false" value="100" visible="false"/>
+<variable ID="Th. scale 4:" name="Th. scale 4:" runtime="false" value="100" visible="false"/>
+<variable ID="Th. scale 5:" name="Th. scale 5:" runtime="false" value="100" visible="false"/>
+<variable ID="Force 2D Wavelets" name="Force 2D Wavelets" runtime="false" value="false" visible="true"/>
+</input>
+<output>
+<variable ID="binary Spot Sequence" name="binary Spot Sequence" runtime="false" visible="true"/>
+<variable ID="detection as ROIs" name="detection as ROIs" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="141016311" blockType="plugins.adufour.blocks.tools.roi.TranslateROI" className="plugins.adufour.blocks.tools.roi.TranslateROI" collapsed="false" definedName="Translate ROI" height="155" keepsResults="true" width="187" xLocation="687" yLocation="16">
+<variables>
+<input>
+<variable ID="input ROI" name="Input ROI" runtime="false" visible="true"/>
+<variable ID="X shift" name="X shift" runtime="false" visible="true"/>
+<variable ID="Y shift" name="Y shift" runtime="false" visible="true"/>
+<variable ID="Z shift" name="Z shift" runtime="false" value="0" visible="true"/>
+</input>
+<output>
+<variable ID="output ROI" name="Translated ROI" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+<block ID="936042626" blockType="plugins.ofuica.metro.protocols.MetroROI" className="plugins.ofuica.metro.protocols.MetroROI" collapsed="false" definedName="Metro ROI" height="199" keepsResults="true" width="191" xLocation="688" yLocation="188">
+<variables>
+<input>
+<variable ID="session" name="session" runtime="false" value="OmeroSession" visible="true"/>
+<variable ID="action" name="action" runtime="false" value="CREATE" visible="true"/>
+<variable ID="id" name="id" runtime="false" visible="true"/>
+<variable ID="site" name="site" runtime="false" value="0" visible="true"/>
+<variable ID="name" name="name" runtime="false" value="" visible="true"/>
+<variable ID="rois" name="rois" runtime="false" visible="true"/>
+</input>
+<output>
+<variable ID="rois" name="rois" runtime="false" visible="true"/>
+</output>
+</variables>
+</block>
+</blocks>
+<links>
+<link dstBlockID="141016311" dstVarID="input ROI" srcBlockID="1284539334" srcVarID="detection as ROIs"/>
+<link dstBlockID="936042626" dstVarID="id" srcBlockID="182294" srcVarID="guid"/>
+<link dstBlockID="936042626" dstVarID="rois" srcBlockID="141016311" srcVarID="output ROI"/>
+<link dstBlockID="141016311" dstVarID="X shift" srcBlockID="182294" srcVarID="origin X"/>
+<link dstBlockID="141016311" dstVarID="Y shift" srcBlockID="182294" srcVarID="origin Y"/>
+<link dstBlockID="1186285956" dstVarID="sequence" srcBlockID="182294" srcVarID="tiled sequence"/>
+<link dstBlockID="1284539334" dstVarID="input Sequence" srcBlockID="1186285956" srcVarID="extracted"/>
+<link dstBlockID="1284539334" dstVarID="input Sequence ROIs" srcBlockID="1186285956" srcVarID="extracted"/>
+</links>
+<variables>
+<input>
+<variable ID="guid" blockID="182294" value="210752" visible="true"/>
+<variable ID="session" blockID="182294" value="OmeroSession" visible="true"/>
+<variable ID="tiles dimensions" blockID="182294" value="128 128" visible="true"/>
+<variable ID="origin X" blockID="182294" value="128" visible="true"/>
+<variable ID="origin Y" blockID="182294" value="384" visible="true"/>
+<variable ID="1284539334:input Sequence" blockID="1284539334" visible="false"/>
+<variable ID="1284539334:Spot to detect" blockID="1284539334" value="BRIGHT_SPOT" visible="false"/>
+<variable ID="1284539334:input Sequence ROIs" blockID="1284539334" visible="false"/>
+<variable ID="1284539334:Compute WAT considering ROI" blockID="1284539334" value="true" visible="false"/>
+<variable ID="1284539334:ROIs for detection mask" blockID="1284539334" value="No ROI" visible="false"/>
+<variable ID="1284539334:Scale 1" blockID="1284539334" value="false" visible="false"/>
+<variable ID="1284539334:Scale 2" blockID="1284539334" value="true" visible="false"/>
+<variable ID="1284539334:Scale 3" blockID="1284539334" value="false" visible="false"/>
+<variable ID="1284539334:Scale 4" blockID="1284539334" value="false" visible="false"/>
+<variable ID="1284539334:Scale 5" blockID="1284539334" value="false" visible="false"/>
+<variable ID="1284539334:Th. scale 1:" blockID="1284539334" value="100" visible="false"/>
+<variable ID="1284539334:Th. scale 2:" blockID="1284539334" value="100" visible="false"/>
+<variable ID="1284539334:Th. scale 3:" blockID="1284539334" value="100" visible="false"/>
+<variable ID="1284539334:Th. scale 4:" blockID="1284539334" value="100" visible="false"/>
+<variable ID="1284539334:Th. scale 5:" blockID="1284539334" value="100" visible="false"/>
+<variable ID="1284539334:Force 2D Wavelets" blockID="1284539334" value="false" visible="false"/>
+<variable ID="936042626:session" blockID="936042626" value="OmeroSession" visible="false"/>
+<variable ID="936042626:action" blockID="936042626" value="CREATE" visible="false"/>
+<variable ID="936042626:id" blockID="936042626" value="210752" visible="false"/>
+<variable ID="936042626:site" blockID="936042626" value="0" visible="false"/>
+<variable ID="936042626:name" blockID="936042626" value="" visible="false"/>
+<variable ID="936042626:rois" blockID="936042626" value="70 ROI" visible="false"/>
+<variable ID="141016311:input ROI" blockID="141016311" value="70 ROI" visible="false"/>
+<variable ID="141016311:X shift" blockID="141016311" value="128" visible="false"/>
+<variable ID="141016311:Y shift" blockID="141016311" value="384" visible="false"/>
+<variable ID="141016311:Z shift" blockID="141016311" value="0" visible="false"/>
+<variable ID="1186285956:sequence" blockID="1186285956" visible="false"/>
+<variable ID="1186285956:channel" blockID="1186285956" value="0" visible="false"/>
+</input>
+<output>
+<variable ID="iteration" blockID="182294" visible="true"/>
+<variable ID="tiled sequence" blockID="182294" visible="true"/>
+<variable ID="1284539334:binary Spot Sequence" blockID="1284539334" visible="false"/>
+<variable ID="1284539334:detection as ROIs" blockID="1284539334" visible="false"/>
+<variable ID="936042626:rois" blockID="936042626" visible="false"/>
+<variable ID="141016311:output ROI" blockID="141016311" visible="false"/>
+<variable ID="1186285956:extracted" blockID="1186285956" visible="false"/>
+</output>
+</variables>
+</workflow>
+</blocks>
+<links/>
+</protocol>
