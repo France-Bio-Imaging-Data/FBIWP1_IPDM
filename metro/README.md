@@ -103,7 +103,7 @@ In a cluster:
 
 ### Metro time chart
 
-![Capture d’écran 2017-05-24 à 14.38.10.png](https://bitbucket.org/repo/epEBxB/images/105636929-Capture%20d%E2%80%99e%CC%81cran%202017-05-24%20a%CC%80%2014.38.10.png)
+![Capture d’écran 2017-05-24 à 14.38.10.png](https://github.com/PerrineGilloteaux/FBIWP1_IPDM/raw/master/metro/images/105636929-Capture%2520d%E2%80%99e%CC%81cran%25202017-05-24%2520a%CC%80%252014.38.10.png)
 
 ### Metro Comment
 
