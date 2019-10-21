@@ -70,7 +70,7 @@ In a cluster:
 * Run ./run-compute.bat (It is necessary specify some parameters depending of the needs.)
 * Go to the OpenImadis web interface and execute the process for an image.
 
-![Capture d’écran 2017-05-24 à 14.10.16.png](https://bitbucket.org/repo/epEBxB/images/736063935-Capture%20d%E2%80%99e%CC%81cran%202017-05-24%20a%CC%80%2014.10.16.png)
+![Capture d’écran 2017-05-24 à 14.10.16.png](https://github.com/PerrineGilloteaux/FBIWP1_IPDM/raw/master/metro/images/736063935-Capture%2520d%E2%80%99e%CC%81cran%25202017-05-24%2520a%CC%80%252014.10.16.png)
 
 ## Metro blocks operations
 
@@ -80,22 +80,22 @@ In a cluster:
 
 ### Metro Get Sequence
 
-![Capture d’écran 2017-05-24 à 14.16.17.png](https://bitbucket.org/repo/epEBxB/images/680456197-Capture%20d%E2%80%99e%CC%81cran%202017-05-24%20a%CC%80%2014.16.17.png)
+![Capture d’écran 2017-05-24 à 14.16.17.png](https://github.com/PerrineGilloteaux/FBIWP1_IPDM/raw/master/metro/images/680456197-Capture%2520d%E2%80%99e%CC%81cran%25202017-05-24%2520a%CC%80%252014.16.17.png)
 
 ### Metro ROI
-![Capture d’écran 2017-05-24 à 14.17.26.png](https://bitbucket.org/repo/epEBxB/images/3058877014-Capture%20d%E2%80%99e%CC%81cran%202017-05-24%20a%CC%80%2014.17.26.png)
+![Capture d’écran 2017-05-24 à 14.17.26.png](https://github.com/PerrineGilloteaux/FBIWP1_IPDM/raw/master/metro/images/3058877014-Capture%2520d%E2%80%99e%CC%81cran%25202017-05-24%2520a%CC%80%252014.17.26.png)
 
 ### Metro Search
 
-![Capture d’écran 2017-05-24 à 14.19.59.png](https://bitbucket.org/repo/epEBxB/images/362850631-Capture%20d%E2%80%99e%CC%81cran%202017-05-24%20a%CC%80%2014.19.59.png)
+![Capture d’écran 2017-05-24 à 14.19.59.png](https://github.com/PerrineGilloteaux/FBIWP1_IPDM/raw/master/metro/images/362850631-Capture%2520d%E2%80%99e%CC%81cran%25202017-05-24%2520a%CC%80%252014.19.59.png)
 
 ### Metro Upload
 
-![Capture d’écran 2017-05-24 à 14.20.42.png](https://bitbucket.org/repo/epEBxB/images/691247429-Capture%20d%E2%80%99e%CC%81cran%202017-05-24%20a%CC%80%2014.20.42.png)
+![Capture d’écran 2017-05-24 à 14.20.42.png](https://github.com/PerrineGilloteaux/FBIWP1_IPDM/raw/master/metro/images/691247429-Capture%2520d%E2%80%99e%CC%81cran%25202017-05-24%2520a%CC%80%252014.20.42.png)
 
 ### Metro Annotate
 
-![Capture d’écran 2017-05-24 à 14.36.03.png](https://bitbucket.org/repo/epEBxB/images/737682286-Capture%20d%E2%80%99e%CC%81cran%202017-05-24%20a%CC%80%2014.36.03.png) 
+![Capture d’écran 2017-05-24 à 14.36.03.png](https://github.com/PerrineGilloteaux/FBIWP1_IPDM/raw/master/metro/images/737682286-Capture%2520d%E2%80%99e%CC%81cran%25202017-05-24%2520a%CC%80%252014.36.03.png) 
 
 ### Metro Attach Sequence
 
@@ -129,7 +129,7 @@ For motivation, I will let you some examples :)
 
 ### Metro Tiles Loop + spot detector + Metro ROI
 
-![Capture d’écran 2017-05-29 à 16.01.18.png](https://bitbucket.org/repo/epEBxB/images/3273943544-Capture%20d%E2%80%99e%CC%81cran%202017-05-29%20a%CC%80%2016.01.18.png)
+![Capture d’écran 2017-05-29 à 16.01.18.png](https://github.com/PerrineGilloteaux/FBIWP1_IPDM/raw/master/metro/images/3273943544-Capture%2520d%E2%80%99e%CC%81cran%25202017-05-29%2520a%CC%80%252016.01.18.png)
 
 ### Search annotated cells images in Omero server
 
