@@ -76,7 +76,7 @@ In a cluster:
 
 ### Metro Login
 
-![Capture d’écran 2017-05-24 à 14.03.52.png](https://bitbucket.org/repo/epEBxB/images/2816409166-Capture%20d%E2%80%99e%CC%81cran%202017-05-24%20a%CC%80%2014.03.52.png)
+![Capture d’écran 2017-05-24 à 14.03.52.png](https://github.com/PerrineGilloteaux/FBIWP1_IPDM/raw/master/metro/images/2816409166-Capture%2520d%E2%80%99e%CC%81cran%25202017-05-24%2520a%CC%80%252014.03.52.png)
 
 ### Metro Get Sequence
 
@@ -99,7 +99,7 @@ In a cluster:
 
 ### Metro Attach Sequence
 
-![Capture d’écran 2017-05-24 à 14.37.06.png](https://bitbucket.org/repo/epEBxB/images/2821291729-Capture%20d%E2%80%99e%CC%81cran%202017-05-24%20a%CC%80%2014.37.06.png)
+![Capture d’écran 2017-05-24 à 14.37.06.png](https://github.com/PerrineGilloteaux/FBIWP1_IPDM/raw/master/metro/images/2821291729-Capture%2520d%E2%80%99e%CC%81cran%25202017-05-24%2520a%CC%80%252014.37.06.png)
 
 ### Metro time chart
 
@@ -107,11 +107,11 @@ In a cluster:
 
 ### Metro Comment
 
-![Capture d’écran 2017-05-24 à 14.39.50.png](https://bitbucket.org/repo/epEBxB/images/241097863-Capture%20d%E2%80%99e%CC%81cran%202017-05-24%20a%CC%80%2014.39.50.png)
+![Capture d’écran 2017-05-24 à 14.39.50.png](https://github.com/PerrineGilloteaux/FBIWP1_IPDM/raw/master/metro/images/241097863-Capture%2520d%E2%80%99e%CC%81cran%25202017-05-24%2520a%CC%80%252014.39.50.png)
 
 ### Metro Tiles Loop 
 
-![Capture d’écran 2017-05-29 à 15.50.35.png](https://bitbucket.org/repo/epEBxB/images/3048115218-Capture%20d%E2%80%99e%CC%81cran%202017-05-29%20a%CC%80%2015.50.35.png)
+![Capture d’écran 2017-05-29 à 15.50.35.png](https://github.com/PerrineGilloteaux/FBIWP1_IPDM/raw/master/metro/images/3048115218-Capture%2520d%E2%80%99e%CC%81cran%25202017-05-29%2520a%CC%80%252015.50.35.png)
 
 ## Usage examples
 
@@ -121,11 +121,11 @@ For motivation, I will let you some examples :)
 
 ### Omero to OpenImadis process
 
-![Capture d’écran 2017-05-17 à 15.16.55.png](https://bitbucket.org/repo/epEBxB/images/2326035168-Capture%20d%E2%80%99e%CC%81cran%202017-05-17%20a%CC%80%2015.16.55.png)
+![Capture d’écran 2017-05-17 à 15.16.55.png](https://github.com/PerrineGilloteaux/FBIWP1_IPDM/raw/master/metro/images/2326035168-Capture%2520d%E2%80%99e%CC%81cran%25202017-05-17%2520a%CC%80%252015.16.55.png)
 
 ### Displaying results in a Chart
 
-![Capture d’écran 2017-05-24 à 14.34.50.png](https://bitbucket.org/repo/epEBxB/images/1812777273-Capture%20d%E2%80%99e%CC%81cran%202017-05-24%20a%CC%80%2014.34.50.png)
+![Capture d’écran 2017-05-24 à 14.34.50.png](https://github.com/PerrineGilloteaux/FBIWP1_IPDM/raw/master/metro/images/1812777273-Capture%2520d%E2%80%99e%CC%81cran%25202017-05-24%2520a%CC%80%252014.34.50.png)
 
 ### Metro Tiles Loop + spot detector + Metro ROI
 
@@ -133,21 +133,21 @@ For motivation, I will let you some examples :)
 
 ### Search annotated cells images in Omero server
 
-![Capture d’écran 2017-06-12 à 17.24.54.png](https://bitbucket.org/repo/epEBxB/images/1086801721-Capture%20d%E2%80%99e%CC%81cran%202017-06-12%20a%CC%80%2017.24.54.png)
+![Capture d’écran 2017-06-12 à 17.24.54.png](https://github.com/PerrineGilloteaux/FBIWP1_IPDM/raw/master/metro/images/1086801721-Capture%2520d%E2%80%99e%CC%81cran%25202017-06-12%2520a%CC%80%252017.24.54.png)
 
-![Capture d’écran 2017-06-12 à 17.17.11.png](https://bitbucket.org/repo/epEBxB/images/1582456220-Capture%20d%E2%80%99e%CC%81cran%202017-06-12%20a%CC%80%2017.17.11.png)
+![Capture d’écran 2017-06-12 à 17.17.11.png](https://github.com/PerrineGilloteaux/FBIWP1_IPDM/raw/master/metro/images/1582456220-Capture%2520d%E2%80%99e%CC%81cran%25202017-06-12%2520a%CC%80%252017.17.11.png)
 
 
 ### Generating and storing central moments for all PSF
 
-![Capture d’écran 2017-07-11 à 18.01.04.png](https://bitbucket.org/repo/epEBxB/images/233061413-Capture%20d%E2%80%99e%CC%81cran%202017-07-11%20a%CC%80%2018.01.04.png)
+![Capture d’écran 2017-07-11 à 18.01.04.png](https://github.com/PerrineGilloteaux/FBIWP1_IPDM/raw/master/metro/images/233061413-Capture%2520d%E2%80%99e%CC%81cran%25202017-07-11%2520a%CC%80%252018.01.04.png)
 
 
 ### Real application to annotated indicator of performance
 This is an real application sample to calculate an indicator using the difference of computed resolutions.
 
 The final version should use an indicator calculated with central moments
-![Capture d’écran 2017-06-08 à 10.59.14.png](https://bitbucket.org/repo/epEBxB/images/1273009748-Capture%20d%E2%80%99e%CC%81cran%202017-06-08%20a%CC%80%2010.59.14.png)
+![Capture d’écran 2017-06-08 à 10.59.14.png](https://github.com/PerrineGilloteaux/FBIWP1_IPDM/raw/master/metro/images/1273009748-Capture%2520d%E2%80%99e%CC%81cran%25202017-06-08%2520a%CC%80%252010.59.14.png)
 
 ### How to compare two PSF (Measured and calculated)
 
