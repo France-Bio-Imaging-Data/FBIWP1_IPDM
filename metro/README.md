@@ -149,6 +149,4 @@ This is an real application sample to calculate an indicator using the differenc
 The final version should use an indicator calculated with central moments
 ![Capture d’écran 2017-06-08 à 10.59.14.png](https://github.com/PerrineGilloteaux/FBIWP1_IPDM/raw/master/metro/images/1273009748-Capture%2520d%E2%80%99e%CC%81cran%25202017-06-08%2520a%CC%80%252010.59.14.png)
 
-### How to compare two PSF (Measured and calculated)
 
-![test PSF Moments.protocol_screenshot.png](http://hft.io/psf_moments.png)
